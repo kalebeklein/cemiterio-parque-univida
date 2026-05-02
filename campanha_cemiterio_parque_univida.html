@@ -1,0 +1,2940 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campanha de Lançamento — Cemitério Parque Univida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green-deep: #1B3A6B;
+  --green-sage: #2C5F8D;
+  --green-pale: #B5D0E8;
+  --sand: #FFF4B8;
+  --ivory: #FAF7F0;
+  --paper: #F4EFE3;
+  --charcoal: #2D2A26;
+  --ink: #1A1814;
+  --gold: #F5C518;
+  --gold-pale: #FFE58A;
+  --rust: #8B4513;
+  --line: rgba(45, 42, 38, 0.12);
+  --line-strong: rgba(45, 42, 38, 0.25);
+  --shadow-sm: 0 1px 2px rgba(45, 42, 38, 0.04);
+  --shadow-md: 0 4px 16px rgba(45, 42, 38, 0.06);
+  --shadow-lg: 0 12px 40px rgba(27, 58, 107, 0.12);
+  --display: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+  --body: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  background: var(--ivory);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.65;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(181, 208, 232, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 90%, rgba(245, 197, 24, 0.05) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* === TOOLBAR FIXA === */
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(250, 247, 240, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--line);
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.toolbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--green-deep);
+  letter-spacing: -0.01em;
+}
+
+.toolbar-brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-deep), var(--green-sage));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ivory);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background: var(--ink);
+  color: var(--ivory);
+  border-color: var(--ink);
+}
+
+.btn-primary {
+  background: var(--green-deep);
+  color: var(--ivory);
+  border-color: var(--green-deep);
+}
+
+.btn-primary:hover {
+  background: var(--green-sage);
+  border-color: var(--green-sage);
+}
+
+.btn-icon {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  justify-content: center;
+}
+
+.save-status {
+  font-size: 12px;
+  color: var(--green-sage);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-right: 12px;
+  transition: opacity 0.3s;
+}
+
+.save-status.saving { color: var(--gold); }
+.save-status.saved { color: var(--green-sage); }
+
+/* === LAYOUT GERAL === */
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 60px 120px;
+}
+
+/* === CAPA === */
+.cover {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 0;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, var(--green-pale) 0%, transparent 70%);
+  opacity: 0.3;
+  pointer-events: none;
+  filter: blur(20px);
+}
+
+.cover-eyebrow {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cover-eyebrow::before,
+.cover-eyebrow::after {
+  content: '';
+  flex: 0 0 40px;
+  height: 1px;
+  background: var(--green-deep);
+}
+
+.cover-title {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(48px, 8vw, 96px);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 24px;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+}
+
+.cover-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--green-deep);
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+}
+
+.cover-subtitle {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(20px, 2.4vw, 28px);
+  color: var(--charcoal);
+  margin-bottom: 56px;
+  line-height: 1.4;
+  max-width: 720px;
+  font-variation-settings: "opsz" 32;
+}
+
+.cover-meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+  max-width: 800px;
+}
+
+.cover-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cover-meta-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  opacity: 0.6;
+}
+
+.cover-meta-value {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* === SUMÁRIO LATERAL === */
+.toc {
+  position: fixed;
+  left: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 220px;
+  z-index: 100;
+  font-size: 12px;
+  display: none;
+}
+
+@media (min-width: 1400px) {
+  .toc { display: block; }
+}
+
+.toc-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  opacity: 0.5;
+  margin-bottom: 16px;
+}
+
+.toc-list {
+  list-style: none;
+  border-left: 1px solid var(--line);
+}
+
+.toc-item a {
+  display: block;
+  padding: 6px 12px;
+  color: var(--charcoal);
+  opacity: 0.6;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  border-left: 2px solid transparent;
+  margin-left: -1px;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.toc-item a:hover,
+.toc-item a.active {
+  opacity: 1;
+  color: var(--green-deep);
+  border-left-color: var(--green-deep);
+}
+
+/* === SEÇÕES === */
+.section {
+  margin-bottom: 96px;
+  scroll-margin-top: 100px;
+  position: relative;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  margin-bottom: 48px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+
+.section-number {
+  font-family: var(--display);
+  font-size: 14px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--green-deep);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  width: 48px;
+}
+
+.section-title {
+  font-family: var(--display);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--ink);
+  flex: 1;
+  font-variation-settings: "opsz" 72;
+}
+
+.section-actions {
+  display: flex;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.section:hover .section-actions {
+  opacity: 1;
+}
+
+.section-content {
+  padding-left: 72px;
+}
+
+@media (max-width: 768px) {
+  .section-content { padding-left: 0; }
+  .section-header { flex-wrap: wrap; }
+}
+
+/* === COMPONENTES DE TEXTO === */
+.lead {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--charcoal);
+  margin-bottom: 32px;
+  font-variation-settings: "opsz" 32;
+}
+
+.lead em {
+  font-style: italic;
+  color: var(--green-deep);
+}
+
+p { margin-bottom: 16px; }
+
+.subhead {
+  font-family: var(--display);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 40px 0 16px;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+  margin-bottom: 12px;
+  display: block;
+}
+
+strong { font-weight: 700; color: var(--ink); }
+em { font-style: italic; }
+
+/* === BLOCOS / CARDS === */
+.block {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 24px;
+  position: relative;
+  transition: box-shadow 0.2s;
+}
+
+.block:hover { box-shadow: var(--shadow-md); }
+
+.block-quote {
+  background: linear-gradient(135deg, var(--green-deep), var(--green-sage));
+  color: var(--ivory);
+  padding: 40px 48px;
+  border-radius: 12px;
+  margin: 32px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.block-quote::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 16px;
+  font-family: var(--display);
+  font-size: 200px;
+  opacity: 0.15;
+  line-height: 1;
+}
+
+.block-quote-text {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.3;
+  font-style: italic;
+  position: relative;
+  font-variation-settings: "opsz" 72;
+}
+
+.block-quote-attribution {
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  position: relative;
+}
+
+.block-warning {
+  background: var(--sand);
+  border-left: 3px solid var(--rust);
+  padding: 20px 28px;
+  border-radius: 0 8px 8px 0;
+  font-size: 14px;
+  margin: 20px 0;
+}
+
+.block-warning strong {
+  color: var(--rust);
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.block-info {
+  background: rgba(181, 208, 232, 0.15);
+  border-left: 3px solid var(--green-sage);
+  padding: 20px 28px;
+  border-radius: 0 8px 8px 0;
+  font-size: 14px;
+  margin: 20px 0;
+}
+
+.block-info strong {
+  color: var(--green-deep);
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* === LISTAS === */
+ul, ol { padding-left: 0; list-style: none; }
+
+.list-clean { margin: 16px 0; }
+
+.list-clean li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.list-clean li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 14px;
+  height: 1px;
+  background: var(--green-deep);
+}
+
+.list-check li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.list-check li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--green-sage);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* === TABELAS === */
+.table-wrap {
+  overflow-x: auto;
+  margin: 24px 0;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background: var(--ivory);
+}
+
+thead { background: var(--paper); }
+
+th {
+  text-align: left;
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  border-bottom: 2px solid var(--green-deep);
+}
+
+td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(181, 208, 232, 0.06); }
+
+td strong { color: var(--green-deep); }
+
+/* === GRIDS === */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 24px 0;
+}
+
+@media (max-width: 768px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
+
+.tier-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 28px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.tier-card:hover {
+  border-color: var(--green-deep);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.tier-card.tier-eterno {
+  background: linear-gradient(135deg, var(--ink), var(--charcoal));
+  color: var(--ivory);
+  border-color: var(--gold);
+}
+
+.tier-card.tier-eterno .tier-name { color: var(--gold-pale); }
+.tier-card.tier-eterno .tier-price { color: var(--gold); }
+
+.tier-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 8px;
+}
+
+.tier-name {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+  color: var(--green-deep);
+}
+
+.tier-spec {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+.tier-price {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--green-deep);
+  border-top: 1px solid currentColor;
+  padding-top: 16px;
+  margin-top: 16px;
+  opacity: 0.9;
+}
+
+/* === ROTEIROS DE VÍDEO === */
+.script {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.script-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.script-title {
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.script-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--charcoal);
+}
+
+.script-meta-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.script-meta-label {
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+.scene {
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.scene-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.scene-label {
+  font-family: var(--display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--green-deep);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.scene-time {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--charcoal);
+  background: var(--sand);
+  padding: 2px 10px;
+  border-radius: 4px;
+}
+
+.scene-direction {
+  font-style: italic;
+  color: var(--charcoal);
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.scene-narration {
+  background: rgba(27, 58, 107, 0.06);
+  border-left: 2px solid var(--green-deep);
+  padding: 12px 16px;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.scene-narration::before {
+  content: 'Locução / Diálogo:';
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+  margin-bottom: 6px;
+}
+
+/* === ARTES === */
+.art-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.art-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.art-title {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.art-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: var(--green-deep);
+  color: var(--ivory);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.art-concept {
+  font-size: 13px;
+  color: var(--charcoal);
+  font-style: italic;
+  margin-bottom: 16px;
+  opacity: 0.85;
+}
+
+.art-copy {
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px 24px;
+  font-family: var(--display);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 12px 0;
+  white-space: pre-wrap;
+}
+
+.art-legend {
+  background: rgba(45, 42, 38, 0.04);
+  border-radius: 8px;
+  padding: 16px 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 12px;
+  white-space: pre-wrap;
+}
+
+.art-legend::before {
+  content: 'Legenda do post:';
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  opacity: 0.6;
+  margin-bottom: 8px;
+}
+
+/* === EDIÇÃO === */
+[contenteditable="true"] {
+  outline: none;
+  transition: background 0.15s;
+  border-radius: 4px;
+}
+
+[contenteditable="true"]:hover {
+  background: rgba(245, 197, 24, 0.08);
+}
+
+[contenteditable="true"]:focus {
+  background: rgba(245, 197, 24, 0.12);
+  box-shadow: 0 0 0 2px var(--gold-pale);
+}
+
+.removable {
+  position: relative;
+}
+
+.btn-remove {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--line-strong);
+  background: var(--ivory);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--charcoal);
+  opacity: 0;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  font-family: var(--body);
+}
+
+.removable:hover .btn-remove {
+  opacity: 1;
+}
+
+.btn-remove:hover {
+  background: var(--rust);
+  color: var(--ivory);
+  border-color: var(--rust);
+}
+
+.btn-add {
+  width: 100%;
+  padding: 14px;
+  border: 1px dashed var(--line-strong);
+  background: transparent;
+  color: var(--charcoal);
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s;
+  margin-top: 12px;
+  letter-spacing: 0.05em;
+}
+
+.btn-add:hover {
+  border-color: var(--green-deep);
+  color: var(--green-deep);
+  background: rgba(27, 58, 107, 0.04);
+}
+
+.btn-add-section {
+  width: 100%;
+  padding: 24px;
+  border: 2px dashed var(--line-strong);
+  background: transparent;
+  color: var(--charcoal);
+  font-family: var(--display);
+  font-size: 16px;
+  font-style: italic;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.2s;
+  margin: 32px 0;
+  opacity: 0.5;
+}
+
+.btn-add-section:hover {
+  border-color: var(--green-deep);
+  color: var(--green-deep);
+  background: rgba(27, 58, 107, 0.04);
+  opacity: 1;
+}
+
+/* === RODAPÉ === */
+.footer {
+  margin-top: 120px;
+  padding-top: 48px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  font-size: 12px;
+  color: var(--charcoal);
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.footer-mark {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--green-deep);
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 8px;
+  opacity: 1;
+}
+
+/* === IMPRESSÃO === */
+@media print {
+  body { background: white; }
+  .toolbar, .toc, .btn-add, .btn-add-section, .btn-remove, .section-actions { display: none !important; }
+  .page { padding: 0; max-width: none; }
+  .section { page-break-inside: avoid; margin-bottom: 40px; }
+  .script, .art-card, .block { page-break-inside: avoid; }
+  .cover { min-height: auto; padding: 40px 0; }
+  .cover::before { display: none; }
+  .block-quote { background: var(--green-deep) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  [contenteditable="true"]:hover, [contenteditable="true"]:focus { background: transparent; box-shadow: none; }
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 768px) {
+  .page { padding: 90px 24px 60px; }
+  .toolbar { padding: 12px 16px; flex-wrap: wrap; gap: 8px; }
+  .toolbar-brand { font-size: 14px; }
+  .btn { padding: 6px 12px; font-size: 12px; }
+  .save-status { display: none; }
+  .cover-meta { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .section-title { font-size: 32px; }
+  .block, .script, .art-card { padding: 20px; }
+  .block-quote { padding: 28px 24px; }
+  .block-quote-text { font-size: 22px; }
+}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--green-deep); }
+
+/* === SELEÇÃO === */
+::selection { background: var(--gold-pale); color: var(--ink); }
+</style>
+</head>
+<body>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <div class="toolbar-brand">
+    <div class="toolbar-brand-mark">U</div>
+    <span>Campanha · Cemitério Parque Univida</span>
+  </div>
+  <div class="toolbar-actions">
+    <span id="saveStatus" class="save-status saved">Salvo</span>
+    <button class="btn" onclick="saveDocument()">💾 Salvar</button>
+    <button class="btn" onclick="exportHTML()">⬇ Exportar HTML</button>
+    <button class="btn" onclick="window.print()">🖨 Exportar PDF</button>
+    <button class="btn" onclick="resetDocument()" title="Restaurar conteúdo original">↺</button>
+  </div>
+</div>
+
+<!-- TOC LATERAL -->
+<nav class="toc">
+  <div class="toc-title">Sumário</div>
+  <ul class="toc-list" id="tocList"></ul>
+</nav>
+
+<div class="page" id="documentRoot">
+
+<!-- ===== CAPA ===== -->
+<header class="cover">
+  <div class="cover-eyebrow" contenteditable="true">Documento Estratégico Interno · Confidencial</div>
+  <h1 class="cover-title" contenteditable="true">Cemitério Parque <em>Univida</em></h1>
+  <div class="cover-subtitle" contenteditable="true">Campanha de lançamento — 90 dias do conceito ao primeiro jazigo vendido. Da primeira consulta ao último abraço.</div>
+
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Cliente</span>
+      <span class="cover-meta-value" contenteditable="true">Grupo Univida</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Cidade</span>
+      <span class="cover-meta-value" contenteditable="true">Guanhães · MG</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Período</span>
+      <span class="cover-meta-value" contenteditable="true">90 dias</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-label">Investimento</span>
+      <span class="cover-meta-value" contenteditable="true">R$ 69.000</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== SEÇÃO 1: BIG IDEA ===== -->
+<section class="section" id="sec-bigidea" data-section>
+  <div class="section-header">
+    <span class="section-number">I</span>
+    <h2 class="section-title" contenteditable="true">A Big Idea</h2>
+    <div class="section-actions">
+      <button class="btn btn-icon" onclick="duplicateSection(this)" title="Duplicar seção">⎘</button>
+      <button class="btn btn-icon" onclick="removeSection(this)" title="Remover seção">×</button>
+    </div>
+  </div>
+  <div class="section-content">
+    <p class="lead" contenteditable="true">A campanha não vende cemitério. Vende três coisas, nesta ordem psicológica: <em>tranquilidade familiar</em>, <em>dignidade no momento mais difícil</em> e <em>cuidado em vida</em>. Planejar agora é amor, não morbidez.</p>
+
+    <div class="block-quote">
+      <p class="block-quote-text" contenteditable="true">Univida cuida da sua família. Sempre.</p>
+      <p class="block-quote-attribution" contenteditable="true">Da primeira consulta ao último abraço.</p>
+    </div>
+
+    <p contenteditable="true">Esse conceito amarra todo o ecossistema do grupo (Plano · Hospital · Farmácia · Funerária · Cemitério) num <strong>continuum de cuidado</strong>. Você não está lançando um cemitério isolado — está revelando o último elo de uma cadeia que cuida da família há 26 anos. Único no mercado, impossível de ser copiado por concorrentes que não têm essa história.</p>
+
+    <span class="eyebrow" contenteditable="true">Por que funciona em Guanhães</span>
+    <ul class="list-clean" data-list>
+      <li contenteditable="true" class="removable">Conecta-se ao DNA do Plano Univida (26 anos cuidando da saúde)<button class="btn-remove" onclick="removeItem(this)">×</button></li>
+      <li contenteditable="true" class="removable">Reframe positivo: cemitério não é fim, é cuidado<button class="btn-remove" onclick="removeItem(this)">×</button></li>
+      <li contenteditable="true" class="removable">Diferenciação automática vs. cemitério municipal (ele cuida da terra; nós cuidamos da família)<button class="btn-remove" onclick="removeItem(this)">×</button></li>
+    </ul>
+    <button class="btn-add" onclick="addItem(this)">+ Adicionar item</button>
+  </div>
+</section>
+
+<!-- ===== SEÇÃO 2: POSICIONAMENTO ===== -->
+<section class="section" id="sec-posicionamento" data-section>
+  <div class="section-header">
+    <span class="section-number">II</span>
+    <h2 class="section-title" contenteditable="true">Posicionamento Estratégico</h2>
+    <div class="section-actions">
+      <button class="btn btn-icon" onclick="duplicateSection(this)">⎘</button>
+      <button class="btn btn-icon" onclick="removeSection(this)">×</button>
+    </div>
+  </div>
+  <div class="section-content">
+    <p class="lead" contenteditable="true">Três batalhas para vencer simultaneamente. Cada uma exige uma narrativa diferente — mas todas alinhadas ao mesmo conceito-mãe.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:22%">Frente</th>
+            <th style="width:30%">Inimigo mental</th>
+            <th>Mensagem-chave</th>
+          </tr>
+        </thead>
+        <tbody data-list>
+          <tr class="removable">
+            <td><strong contenteditable="true">Vs. cemitério municipal</strong></td>
+            <td contenteditable="true">Superlotação · abandono · exposição</td>
+            <td contenteditable="true">"Sua família merece um lugar de paz, não uma fila."<button class="btn-remove" onclick="removeItem(this)">×</button></td>
+          </tr>
+          <tr class="removable">
+            <td><strong contenteditable="true">Vs. tabu da morte</strong></td>
+            <td contenteditable="true">"Não quero pensar nisso"</td>
+            <td contenteditable="true">"Pensar agora é o maior gesto de amor que você pode fazer."<button class="btn-remove" onclick="removeItem(this)">×</button></td>
+          </tr>
+          <tr class="removable">
+            <td><strong contenteditable="true">Vs. concorrente futuro</strong></td>
+            <td contenteditable="true">Imitadores que vão surgir</td>
+            <td contenteditable="true">"O único cemitério parque do Vale do Aço com a tradição Univida."<button class="btn-remove" onclick="removeItem(this)">×</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="btn-add" onclick="addTableRow(this)">+ Adicionar linha</button>
+  </div>
+</section>
+
+<!-- ===== SEÇÃO 3: PRODUTOS E OFERTAS ===== -->
+<section class="section" id="sec-produtos" data-section>
+  <div class="section-header">
+    <span class="section-number">III</span>
+    <h2 class="section-title" contenteditable="true">Arquitetura de Produtos</h2>
+    <div class="section-actions">
+      <button class="btn btn-icon" onclick="duplicateSection(this)">⎘</button>
+      <button class="btn btn-icon" onclick="removeSection(this)">×</button>
+    </div>
+  </div>
+  <div class="section-content">
+    <p class="lead" contenteditable="true">Renomeação estratégica das três linhas: a nomenclatura metálica é vendedora mas comum. <em>Linha Jardim</em>, <em>Linha Memorial</em> e <em>Linha Eterno</em> sugerem escolha estética, não hierarquia social — o cliente do tier de entrada não se sente diminuído.</p>
+
+    <h3 class="subhead" contenteditable="true">Os três tiers</h3>
+
+    <div class="grid-3" data-list>
+      <div class="tier-card removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="tier-eyebrow" contenteditable="true">Tier de entrada · alto volume</div>
+        <div class="tier-name" contenteditable="true">Linha Jardim</div>
+        <div class="tier-spec" contenteditable="true">2 gavetas · gramado paisagístico · entrada acessível</div>
+        <p contenteditable="true">Para famílias que escolhem a serenidade da natureza. Espaço com gramado e árvores, integração visual com o parque.</p>
+        <div class="tier-price" contenteditable="true">R$ 8.900 – R$ 11.900</div>
+      </div>
+
+      <div class="tier-card removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="tier-eyebrow" contenteditable="true">Miolo do mercado</div>
+        <div class="tier-name" contenteditable="true">Linha Memorial</div>
+        <div class="tier-spec" contenteditable="true">2 gavetas · mármore · estrutura clássica</div>
+        <p contenteditable="true">Para quem quer estrutura clássica e acabamento permanente. Área pavimentada com mármore, opção de gravação personalizada.</p>
+        <div class="tier-price" contenteditable="true">R$ 15.900 – R$ 19.900</div>
+      </div>
+
+      <div class="tier-card tier-eterno removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="tier-eyebrow" contenteditable="true">High-ticket · imagem de marca</div>
+        <div class="tier-name" contenteditable="true">Linha Eterno</div>
+        <div class="tier-spec" contenteditable="true">6 gavetas · banco em pedra · área privativa</div>
+        <p contenteditable="true">Para famílias que querem um lugar próprio de encontro. Área privativa, banco em pedra, paisagismo exclusivo, atendimento por gerente sênior.</p>
+        <div class="tier-price" contenteditable="true">R$ 49.900 – R$ 59.900</div>
+      </div>
+    </div>
+    <button class="btn-add" onclick="duplicateLastChild(this)">+ Adicionar tier</button>
+
+    <h3 class="subhead" contenteditable="true">Quatro ofertas de lançamento</h3>
+
+    <div data-list>
+      <div class="block removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <span class="eyebrow" contenteditable="true">Oferta 1 · Urgência + escassez controlada</span>
+        <h4 class="subhead" style="margin-top:0" contenteditable="true">Plano Fundador</h4>
+        <ul class="list-check">
+          <li contenteditable="true">Apenas para os <strong>100 primeiros jazigos</strong> vendidos antes da inauguração</li>
+          <li contenteditable="true">Desconto de 25% sobre o preço pós-inauguração</li>
+          <li contenteditable="true">Brinde: placa personalizada com homenagem</li>
+          <li contenteditable="true">Comunicação: "Seja um dos 100 fundadores"</li>
+        </ul>
+      </div>
+
+      <div class="block removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <span class="eyebrow" contenteditable="true">Oferta 2 · Cross-sell base Plano</span>
+        <h4 class="subhead" style="margin-top:0" contenteditable="true">Plano Família Univida</h4>
+        <ul class="list-check">
+          <li contenteditable="true">Exclusiva para clientes Plano Univida há 5+ anos</li>
+          <li contenteditable="true">Entrada R$ 990 + 36x sem juros</li>
+          <li contenteditable="true">Inclui 1 ano de plano funerário grátis</li>
+          <li contenteditable="true">Atendimento por gerente dedicado (sem fila comercial)</li>
+        </ul>
+      </div>
+
+      <div class="block removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <span class="eyebrow" contenteditable="true">Oferta 3 · Alto volume · Recorrente</span>
+        <h4 class="subhead" style="margin-top:0" contenteditable="true">Plano Tranquilidade</h4>
+        <ul class="list-check">
+          <li contenteditable="true">A partir de <strong>R$ 89/mês</strong> (família com até 4 dependentes)</li>
+          <li contenteditable="true">Cobre velório completo · jazigo cedido em comodato · traslado</li>
+          <li contenteditable="true">O cemitério vira diferencial para reativar/expandir o plano funerário existente</li>
+          <li contenteditable="true">Clientes Plano Univida: 15% de desconto adicional</li>
+        </ul>
+      </div>
+
+      <div class="block removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <span class="eyebrow" contenteditable="true">Oferta 4 · High-ticket · Consultiva</span>
+        <h4 class="subhead" style="margin-top:0" contenteditable="true">Linha Eterno (sob consulta)</h4>
+        <ul class="list-check">
+          <li contenteditable="true">Vendas sob consulta, sem preço público em mídia</li>
+          <li contenteditable="true">Tour privado guiado, atendimento por gerente sênior</li>
+          <li contenteditable="true">Personalização (paisagismo, gravação, banco em pedra escolhida)</li>
+          <li contenteditable="true">Pagamento: 30% entrada + 24x</li>
+        </ul>
+      </div>
+    </div>
+    <button class="btn-add" onclick="duplicateLastChild(this)">+ Adicionar oferta</button>
+  </div>
+</section>
+
+<!-- ===== SEÇÃO 4: IDENTIDADE VISUAL ===== -->
+<section class="section" id="sec-identidade" data-section>
+  <div class="section-header">
+    <span class="section-number">IV</span>
+    <h2 class="section-title" contenteditable="true">Identidade Visual</h2>
+    <div class="section-actions">
+      <button class="btn btn-icon" onclick="duplicateSection(this)">⎘</button>
+      <button class="btn btn-icon" onclick="removeSection(this)">×</button>
+    </div>
+  </div>
+  <div class="section-content">
+    <p class="lead" contenteditable="true">Identidade visual do Cemitério Parque vinculada à <em>identidade institucional do Grupo Univida</em>: azul como dominante, amarelo como accent. Brief para Kaleb produzir 3 propostas de logo (sempre dentro dessa paleta) até D-55.</p>
+
+    <div class="grid-2">
+      <div class="block">
+        <span class="eyebrow" contenteditable="true">Paleta</span>
+        <ul class="list-clean">
+          <li contenteditable="true"><strong>Azul Univida profundo</strong> (#1B3A6B) — confiança, permanência, identidade do grupo há 26 anos</li>
+          <li contenteditable="true"><strong>Amarelo Univida</strong> (#F5C518) — vida, luz, calor humano</li>
+          <li contenteditable="true"><strong>Azul claro</strong> (#B5D0E8) — serenidade, céu, descanso</li>
+          <li contenteditable="true"><strong>Branco puro / marfim</strong> — pureza, dignidade, respiro</li>
+        </ul>
+        <div class="block-warning">
+          <strong>Evitar</strong>
+          <span contenteditable="true">Verde isolado (quebra identidade do grupo), preto (luto explícito), roxo (igreja católica explícita), tons frios sem amarelo (perde calor humano).</span>
+        </div>
+      </div>
+
+      <div class="block">
+        <span class="eyebrow" contenteditable="true">Logo · direcionamento</span>
+        <ul class="list-clean">
+          <li contenteditable="true">Tipografia serifa elegante (Playfair Display, Cormorant, Fraunces) ou sans elegante alinhada à Univida</li>
+          <li contenteditable="true">Símbolo: árvore estilizada, folha, sol nascente ou silhueta orgânica em azul + amarelo</li>
+          <li contenteditable="true"><strong>Nunca</strong> cruz ou anjo — limita público religioso</li>
+          <li contenteditable="true"><strong>Obrigatória</strong> integração visual com identidade Univida (mesmas cores, mesmo DNA)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <span class="eyebrow" contenteditable="true">Tom fotográfico da campanha</span>
+      <div class="grid-2" style="margin-top:12px">
+        <div>
+          <p style="margin-bottom:8px"><strong contenteditable="true">Imagens-âncora</strong></p>
+          <ul class="list-check" data-list>
+            <li contenteditable="true" class="removable">Famílias caminhando juntas em áreas verdes<button class="btn-remove" onclick="removeItem(this)">×</button></li>
+            <li contenteditable="true" class="removable">Avós com netos, pais com filhos — gerações<button class="btn-remove" onclick="removeItem(this)">×</button></li>
+            <li contenteditable="true" class="removable">Luz dourada de fim de tarde<button class="btn-remove" onclick="removeItem(this)">×</button></li>
+            <li contenteditable="true" class="removable">Detalhes do cemitério: paisagismo, banco, capela<button class="btn-remove" onclick="removeItem(this)">×</button></li>
+          </ul>
+          <button class="btn-add" onclick="addItem(this)">+ Adicionar</button>
+        </div>
+        <div>
+          <p style="margin-bottom:8px"><strong contenteditable="true">Nunca usar</strong></p>
+          <ul class="list-clean" data-list>
+            <li contenteditable="true" class="removable">Caixões, lápides em close<button class="btn-remove" onclick="removeItem(this)">×</button></li>
+            <li contenteditable="true" class="removable">Cenas de velório, choro, luto explícito<button class="btn-remove" onclick="removeItem(this)">×</button></li>
+            <li contenteditable="true" class="removable">Cores escuras dominantes<button class="btn-remove" onclick="removeItem(this)">×</button></li>
+            <li contenteditable="true" class="removable">Ambientes nublados/sombrios<button class="btn-remove" onclick="removeItem(this)">×</button></li>
+          </ul>
+          <button class="btn-add" onclick="addItem(this)">+ Adicionar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <span class="eyebrow" contenteditable="true">Tom de voz · palavras</span>
+      <div class="grid-2" style="margin-top:12px">
+        <div>
+          <p style="margin-bottom:8px"><strong contenteditable="true">Palavras-chave</strong></p>
+          <p contenteditable="true">Vida, família, sempre, cuidado, tranquilidade, paz, amor, gerações, memória, herança afetiva, descanso, dignidade, presença, lembrança, raízes, abraço.</p>
+        </div>
+        <div>
+          <p style="margin-bottom:8px"><strong contenteditable="true">Palavras proibidas</strong></p>
+          <p contenteditable="true">Morte, morrer, falecer, morto, luto, defunto, sepultamento, enterro, caixão, cova, lápide, túmulo, jazigo (substituir por "espaço familiar", "lugar de memória", "espaço perpétuo").</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SEÇÃO 5: TIME DE VENDAS ===== -->
+<section class="section" id="sec-vendas" data-section>
+  <div class="section-header">
+    <span class="section-number">V</span>
+    <h2 class="section-title" contenteditable="true">Estrutura do Time Comercial</h2>
+    <div class="section-actions">
+      <button class="btn btn-icon" onclick="duplicateSection(this)">⎘</button>
+      <button class="btn btn-icon" onclick="removeSection(this)">×</button>
+    </div>
+  </div>
+  <div class="section-content">
+    <p class="lead" contenteditable="true">Modelo <em>híbrido</em> que aproveita estruturas existentes (Funerária e Plano) e adiciona um núcleo dedicado. Investimento mensal fixo de ~R$ 7.000 + comissões variáveis.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Função</th>
+            <th>Qtd</th>
+            <th>Origem</th>
+            <th>Remuneração</th>
+          </tr>
+        </thead>
+        <tbody data-list>
+          <tr class="removable">
+            <td contenteditable="true"><strong>Gerente comercial Cemitério</strong></td>
+            <td contenteditable="true">1</td>
+            <td contenteditable="true">Contratação CLT nova</td>
+            <td contenteditable="true">R$ 3.500 fixo + 1% sobre vendas líquidas<button class="btn-remove" onclick="removeItem(this)">×</button></td>
+          </tr>
+          <tr class="removable">
+            <td contenteditable="true"><strong>Consultor sênior</strong> (Linha Eterno + Memorial)</td>
+            <td contenteditable="true">1</td>
+            <td contenteditable="true">Contratação ou Funerária</td>
+            <td contenteditable="true">R$ 2.500 fixo + 4% comissão<button class="btn-remove" onclick="removeItem(this)">×</button></td>
+          </tr>
+          <tr class="removable">
+            <td contenteditable="true"><strong>Consultores comerciais</strong> (Jardim + Plano Tranquilidade)</td>
+            <td contenteditable="true">2</td>
+            <td contenteditable="true">Autônomos comissionados</td>
+            <td contenteditable="true">5% perpétua + R$ 30 por plano funerário ativado<button class="btn-remove" onclick="removeItem(this)">×</button></td>
+          </tr>
+          <tr class="removable">
+            <td contenteditable="true"><strong>Recepção/agendamento</strong></td>
+            <td contenteditable="true">1</td>
+            <td contenteditable="true">Compartilhada com Funerária</td>
+            <td contenteditable="true">Acúmulo de função, +R$ 400 adicional<button class="btn-remove" onclick="removeItem(this)">×</button></td>
+          </tr>
+          <tr class="removable">
+            <td contenteditable="true"><strong>Cross-sell Plano Univida</strong></td>
+            <td contenteditable="true">2</td>
+            <td contenteditable="true">Equipe Plano (Débora/Sarah)</td>
+            <td contenteditable="true">Comissão adicional 3% sem alterar fixo<button class="btn-remove" onclick="removeItem(this)">×</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="btn-add" onclick="addTableRow(this)">+ Adicionar função</button>
+
+    <div class="block-info">
+      <strong>Comissionamento crítico — alinhar incentivos</strong>
+      <span contenteditable="true">Linha Jardim 5% (volume) · Linha Memorial 5% (médio) · Linha Eterno <strong>8%</strong> (alto valor, ciclo longo, justifica esforço) · Plano Tranquilidade R$ 30 por ativação + 10% das 3 primeiras mensalidades.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SEÇÃO 6: CRONOGRAMA ===== -->
+<section class="section" id="sec-cronograma" data-section>
+  <div class="section-header">
+    <span class="section-number">VI</span>
+    <h2 class="section-title" contenteditable="true">Cronograma de 90 Dias</h2>
+    <div class="section-actions">
+      <button class="btn btn-icon" onclick="duplicateSection(this)">⎘</button>
+      <button class="btn btn-icon" onclick="removeSection(this)">×</button>
+    </div>
+  </div>
+  <div class="section-content">
+
+    <div class="block" data-list>
+      <span class="eyebrow" contenteditable="true">Fase 1 · D-60 a D-31 · Pré-lançamento Teaser</span>
+      <p contenteditable="true"><strong>Objetivo:</strong> criar curiosidade, gerar lista de espera, capturar leads sem revelar tudo. <strong>Meta:</strong> 800-1.200 leads.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Semana</th><th>Ação</th><th>Canal</th></tr></thead>
+          <tbody>
+            <tr class="removable"><td contenteditable="true">Sem 1 (D-60)</td><td contenteditable="true">Identidade visual; abrir vagas; landing page de captação</td><td contenteditable="true">Interno + LP<button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+            <tr class="removable"><td contenteditable="true">Sem 2 (D-53)</td><td contenteditable="true">"Algo novo está chegando" — vídeo institucional 60s sem revelar produto</td><td contenteditable="true">Instagram, FB, WhatsApp<button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+            <tr class="removable"><td contenteditable="true">Sem 3 (D-46)</td><td contenteditable="true">Revelação parcial: "O Grupo Univida está prestes a cuidar como nunca"</td><td contenteditable="true">+ outdoor (1 ponto)<button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+            <tr class="removable"><td contenteditable="true">Sem 4 (D-39)</td><td contenteditable="true">Revelação total: "Cemitério Parque Univida — pré-cadastro aberto"</td><td contenteditable="true">Todos os canais<button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="block">
+      <span class="eyebrow" contenteditable="true">Fase 2 · D-30 a D-1 · Pré-venda Exclusiva</span>
+      <p contenteditable="true"><strong>Objetivo:</strong> converter lista de espera em vendas antes da inauguração. <strong>Meta:</strong> 80-120 jazigos vendidos + 300-500 planos Tranquilidade ativados.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Semana</th><th>Ação</th></tr></thead>
+          <tbody>
+            <tr class="removable"><td contenteditable="true">Sem 5 (D-30)</td><td contenteditable="true">Abertura pré-venda apenas para clientes Plano Univida (e-mail, WhatsApp Cobrador IA, ligação Débora/Sarah). Plano Fundador ativo.<button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+            <tr class="removable"><td contenteditable="true">Sem 6 (D-23)</td><td contenteditable="true">Tours guiados privados (qua e sáb à tarde). Vídeos depoimento com primeiros compradores.<button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+            <tr class="removable"><td contenteditable="true">Sem 7 (D-16)</td><td contenteditable="true">Abertura para lista de espera geral. Comunicação: "restam X jazigos do Plano Fundador".<button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+            <tr class="removable"><td contenteditable="true">Sem 8 (D-9)</td><td contenteditable="true">Última chamada Plano Fundador. Convites enviados para inauguração.<button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="block">
+      <span class="eyebrow" contenteditable="true">Fase 3 · D-Day a D+30 · Lançamento e Sustentação</span>
+      <p contenteditable="true"><strong>Objetivo:</strong> evento, mídia, cross-sell intenso. <strong>Meta:</strong> +150 jazigos + 800 famílias ativas no plano funerário.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Semana</th><th>Ação</th></tr></thead>
+          <tbody>
+            <tr class="removable"><td contenteditable="true">D-Day</td><td contenteditable="true">Inauguração: bênção ecumênica, autoridades, café da manhã na capela, tour livre. Mídia local convidada.<button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+            <tr class="removable"><td contenteditable="true">Sem 9</td><td contenteditable="true">Pós-evento: matérias de imprensa, vídeo do evento, depoimentos.<button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+            <tr class="removable"><td contenteditable="true">Sem 10</td><td contenteditable="true">"Família Univida" — campanha de cross-sell intensa para 6 mil+ clientes Plano.<button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+            <tr class="removable"><td contenteditable="true">Sem 11-12</td><td contenteditable="true">Otimização: ajuste de canais que mais converteram, expansão da campanha digital paga.<button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SEÇÃO 7: INVESTIMENTO ===== -->
+<section class="section" id="sec-investimento" data-section>
+  <div class="section-header">
+    <span class="section-number">VII</span>
+    <h2 class="section-title" contenteditable="true">Investimento e Canais</h2>
+    <div class="section-actions">
+      <button class="btn btn-icon" onclick="duplicateSection(this)">⎘</button>
+      <button class="btn btn-icon" onclick="removeSection(this)">×</button>
+    </div>
+  </div>
+  <div class="section-content">
+    <p class="lead" contenteditable="true">Orçamento total <em>R$ 69.000</em> em 90 dias. ROI projetado: 230 jazigos × R$ 14k = <em>R$ 3,2M</em> de receita — investimento equivale a 2,1% da receita projetada.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Canal</th><th>Investimento</th><th>Função</th></tr>
+        </thead>
+        <tbody data-list>
+          <tr class="removable"><td contenteditable="true">Identidade visual + produção (vídeos, fotos, criativos)</td><td contenteditable="true">R$ 18.000</td><td contenteditable="true">One-time<button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+          <tr class="removable"><td contenteditable="true">Tráfego pago Meta (Instagram + FB)</td><td contenteditable="true">R$ 15.000</td><td contenteditable="true">Captação + conversão<button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+          <tr class="removable"><td contenteditable="true">WhatsApp em massa (Cobrador IA / disparos)</td><td contenteditable="true">R$ 0 (interno)</td><td contenteditable="true">Cross-sell base Plano<button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+          <tr class="removable"><td contenteditable="true">Outdoor (2 pontos, 60 dias)</td><td contenteditable="true">R$ 8.000</td><td contenteditable="true">Awareness local<button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+          <tr class="removable"><td contenteditable="true">Rádio local (3 emissoras, 30 dias)</td><td contenteditable="true">R$ 6.000</td><td contenteditable="true">Awareness 60+<button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+          <tr class="removable"><td contenteditable="true">Evento de inauguração</td><td contenteditable="true">R$ 12.000</td><td contenteditable="true">Marca + RP<button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+          <tr class="removable"><td contenteditable="true">Material impresso (folders, brindes)</td><td contenteditable="true">R$ 4.000</td><td contenteditable="true">Vendas consultivas<button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+          <tr class="removable"><td contenteditable="true">Reserva tática (10%)</td><td contenteditable="true">R$ 6.000</td><td contenteditable="true">Ajustes<button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+        </tbody>
+        <tfoot>
+          <tr style="background: var(--green-deep); color: var(--ivory);">
+            <td contenteditable="true"><strong style="color:inherit">Total</strong></td>
+            <td contenteditable="true"><strong style="color:inherit">R$ 69.000</strong></td>
+            <td contenteditable="true">90 dias</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <button class="btn-add" onclick="addTableRow(this)">+ Adicionar canal</button>
+  </div>
+</section>
+
+<!-- ===== SEÇÃO 8: KPIs ===== -->
+<section class="section" id="sec-kpis" data-section>
+  <div class="section-header">
+    <span class="section-number">VIII</span>
+    <h2 class="section-title" contenteditable="true">Metas e KPIs</h2>
+    <div class="section-actions">
+      <button class="btn btn-icon" onclick="duplicateSection(this)">⎘</button>
+      <button class="btn btn-icon" onclick="removeSection(this)">×</button>
+    </div>
+  </div>
+  <div class="section-content">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Indicador</th><th>Meta 90 dias</th></tr></thead>
+        <tbody data-list>
+          <tr class="removable"><td contenteditable="true">Leads capturados (lista de espera)</td><td contenteditable="true"><strong>1.200</strong><button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+          <tr class="removable"><td contenteditable="true">Tours presenciais agendados</td><td contenteditable="true"><strong>350</strong><button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+          <tr class="removable"><td contenteditable="true">Jazigos vendidos</td><td contenteditable="true"><strong>230</strong><button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+          <tr class="removable"><td contenteditable="true">Receita perpétua</td><td contenteditable="true"><strong>R$ 3,2M</strong><button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+          <tr class="removable"><td contenteditable="true">Planos Tranquilidade ativados</td><td contenteditable="true"><strong>500 novos</strong><button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+          <tr class="removable"><td contenteditable="true">Receita recorrente mensal nova</td><td contenteditable="true"><strong>R$ 45k/mês</strong><button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+          <tr class="removable"><td contenteditable="true">CAC (custo por aquisição)</td><td contenteditable="true"><strong>&lt; R$ 300</strong><button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+          <tr class="removable"><td contenteditable="true">NPS pós-tour</td><td contenteditable="true"><strong>&gt; 80</strong><button class="btn-remove" onclick="removeItem(this)">×</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="btn-add" onclick="addTableRow(this)">+ Adicionar KPI</button>
+  </div>
+</section>
+
+</div> <!-- /page início, fechamento real abaixo -->
+
+<!-- ===== SEÇÃO 9: ROTEIROS DE VÍDEO ===== -->
+<div class="page" style="padding-top:0;">
+
+<section class="section" id="sec-videos" data-section>
+  <div class="section-header">
+    <span class="section-number">IX</span>
+    <h2 class="section-title" contenteditable="true">Roteiros de Vídeo</h2>
+    <div class="section-actions">
+      <button class="btn btn-icon" onclick="duplicateSection(this)">⎘</button>
+      <button class="btn btn-icon" onclick="removeSection(this)">×</button>
+    </div>
+  </div>
+  <div class="section-content">
+
+    <p class="lead" contenteditable="true">Sete vídeos principais cobrindo o arco completo da campanha — do mistério inicial à inauguração — mais cinco reels curtos para sustentação semanal no Instagram. Locução feminina 35-50 anos. Trilha: piano + cordas suaves.</p>
+
+    <div data-list>
+
+    <!-- VÍDEO 1 -->
+    <div class="script removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="script-header">
+        <h3 class="script-title" contenteditable="true">Vídeo 1 · Teaser de Mistério</h3>
+        <div class="script-meta">
+          <div class="script-meta-item"><span class="script-meta-label">Quando</span><span contenteditable="true">D-53</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Duração</span><span contenteditable="true">30s</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Formato</span><span contenteditable="true">9:16 + 1:1</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Objetivo</span><span contenteditable="true">Curiosidade</span></div>
+        </div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 1</span><span class="scene-time">0:00 – 0:05</span></div>
+        <p class="scene-direction" contenteditable="true">Tela preta. Som de respiração suave de bebê.</p>
+        <div class="scene-narration" contenteditable="true">Texto branco fade-in: "Há 26 anos..."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 2</span><span class="scene-time">0:05 – 0:12</span></div>
+        <p class="scene-direction" contenteditable="true">Imagens rápidas (1s cada): mãe segurando recém-nascido / médico Plano Univida em consulta / criança correndo no Unifit / família saindo da Unifarma. Sem locução. Trilha começa em piano leve.</p>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 3</span><span class="scene-time">0:12 – 0:18</span></div>
+        <p class="scene-direction" contenteditable="true">Texto sobre as imagens, fade-in.</p>
+        <div class="scene-narration" contenteditable="true">"...cuidamos da sua família em todos os momentos."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 4</span><span class="scene-time">0:18 – 0:25</span></div>
+        <p class="scene-direction" contenteditable="true">Câmera lenta: avô de mãos dadas com neto, caminhando em gramado verde. Não revelar que é o cemitério — pode ser um parque qualquer.</p>
+        <div class="scene-narration" contenteditable="true">"Em breve, um novo capítulo do nosso cuidado."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 5</span><span class="scene-time">0:25 – 0:30</span></div>
+        <p class="scene-direction" contenteditable="true">Tela limpa. Logo Univida. Trilha sustenta nota final.</p>
+        <div class="scene-narration" contenteditable="true">"Algo novo está chegando."</div>
+      </div>
+
+      <button class="btn-add" onclick="addScene(this)">+ Adicionar cena</button>
+      <div class="block-warning" style="margin-top:16px"><strong>Direção crítica</strong><span contenteditable="true">Ninguém deve adivinhar que é cemitério. O objetivo é gerar curiosidade na cidade — "o que a Univida está lançando agora?".</span></div>
+    </div>
+
+    <!-- VÍDEO 2 -->
+    <div class="script removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="script-header">
+        <h3 class="script-title" contenteditable="true">Vídeo 2 · Revelação Parcial</h3>
+        <div class="script-meta">
+          <div class="script-meta-item"><span class="script-meta-label">Quando</span><span contenteditable="true">D-46</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Duração</span><span contenteditable="true">45s</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Formato</span><span contenteditable="true">9:16 + 1:1</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Objetivo</span><span contenteditable="true">Captura de leads</span></div>
+        </div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 1</span><span class="scene-time">0:00 – 0:08</span></div>
+        <p class="scene-direction" contenteditable="true">Drone aéreo do terreno do cemitério (verde, paisagismo, capela). SEM mostrar lápides — apenas paisagem ampla.</p>
+        <div class="scene-narration" contenteditable="true">"Tem coisas que a gente prefere não pensar."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 2</span><span class="scene-time">0:08 – 0:18</span></div>
+        <p class="scene-direction" contenteditable="true">Família reunida em jantar, rindo, brindando.</p>
+        <div class="scene-narration" contenteditable="true">"A vida pede tudo da gente — saúde, trabalho, sonhos. E quando paramos para respirar, é com a família que estamos."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 3</span><span class="scene-time">0:18 – 0:30</span></div>
+        <p class="scene-direction" contenteditable="true">Avó passando aliança de casamento para neta. Mãos com mãos.</p>
+        <div class="scene-narration" contenteditable="true">"Mas o maior gesto de amor que existe... é poupar quem amamos de uma decisão difícil."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 4</span><span class="scene-time">0:30 – 0:40</span></div>
+        <p class="scene-direction" contenteditable="true">Travelling lento entre árvores do cemitério, luz dourada do fim de tarde.</p>
+        <div class="scene-narration" contenteditable="true">"O Grupo Univida está prestes a cuidar da sua família de uma forma que ninguém na nossa região cuida."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 5</span><span class="scene-time">0:40 – 0:45</span></div>
+        <p class="scene-direction" contenteditable="true">Logo Univida.</p>
+        <div class="scene-narration" contenteditable="true">"Em breve. Cadastre-se em [link]."</div>
+      </div>
+
+      <button class="btn-add" onclick="addScene(this)">+ Adicionar cena</button>
+    </div>
+
+    <!-- VÍDEO 3 - MANIFESTO -->
+    <div class="script removable" style="border:2px solid var(--green-deep);">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="script-header">
+        <h3 class="script-title" contenteditable="true">Vídeo 3 · Manifesto · ⭐ PEÇA PRINCIPAL</h3>
+        <div class="script-meta">
+          <div class="script-meta-item"><span class="script-meta-label">Quando</span><span contenteditable="true">D-39</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Duração</span><span contenteditable="true">90s</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Formato</span><span contenteditable="true">16:9 + cortes 9:16 e 1:1</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Objetivo</span><span contenteditable="true">Revelação total + conversão</span></div>
+        </div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 1</span><span class="scene-time">0:00 – 0:10</span></div>
+        <p class="scene-direction" contenteditable="true">Mãe nova, cansada, segurando bebê recém-nascido. Madrugada.</p>
+        <div class="scene-narration" contenteditable="true">"Ninguém ensina como cuidar de uma família. A gente aprende fazendo. Errando. Acertando."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 2</span><span class="scene-time">0:10 – 0:22</span></div>
+        <p class="scene-direction" contenteditable="true">Sequência: criança aprendendo a andar / pai levando filho à escola / mãe esperando no consultório do Plano / família na praia.</p>
+        <div class="scene-narration" contenteditable="true">"Cuidar é o trabalho mais bonito que existe. E também o mais constante."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 3</span><span class="scene-time">0:22 – 0:35</span></div>
+        <p class="scene-direction" contenteditable="true">Avós idosos, sentados juntos no sofá, rindo.</p>
+        <div class="scene-narration" contenteditable="true">"Há 26 anos, a Univida cuida das famílias de Guanhães e região. Nas consultas, nos exames, nos remédios, nos exercícios. Em cada dia comum."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 4</span><span class="scene-time">0:35 – 0:50</span></div>
+        <p class="scene-direction" contenteditable="true">Drone do Cemitério Parque Univida — pela primeira vez revela o local com placa "Cemitério Parque Univida".</p>
+        <div class="scene-narration" contenteditable="true">"E agora, a gente completa o que sempre prometeu: cuidar da sua família. Sempre. Da primeira consulta ao último abraço."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 5</span><span class="scene-time">0:50 – 1:05</span></div>
+        <p class="scene-direction" contenteditable="true">Tour rápido pelas áreas: Linha Jardim (gramado), Linha Memorial (mármore), Linha Eterno (banco em pedra). Capela em luz natural.</p>
+        <div class="scene-narration" contenteditable="true">"O primeiro cemitério parque do Vale do Aço. Espaços projetados para a família reunir, lembrar e respirar."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 6</span><span class="scene-time">1:05 – 1:20</span></div>
+        <p class="scene-direction" contenteditable="true">Família (3 gerações) caminhando junta no parque do cemitério, sorrindo, conversando. Câmera lenta.</p>
+        <div class="scene-narration" contenteditable="true">"Porque o melhor lugar para deixar a memória de quem amamos é onde nossa família ainda pode se encontrar."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 7</span><span class="scene-time">1:20 – 1:30</span></div>
+        <p class="scene-direction" contenteditable="true">Tela limpa. Logo Cemitério Parque Univida. CTA: "Pré-cadastro aberto. Plano Fundador para os 100 primeiros."</p>
+        <div class="scene-narration" contenteditable="true">"Univida. Cuidando da sua família. Sempre."</div>
+      </div>
+
+      <button class="btn-add" onclick="addScene(this)">+ Adicionar cena</button>
+
+      <div class="block-info" style="margin-top:16px"><strong>Distribuição</strong><span contenteditable="true">YouTube institucional + post fixado Instagram + WhatsApp em massa para base Plano + site grupounivida.com.br + telão na recepção do Hospital Dia, Plano e Unifit.</span></div>
+    </div>
+
+    <!-- VÍDEO 4 -->
+    <div class="script removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="script-header">
+        <h3 class="script-title" contenteditable="true">Vídeo 4 · Tour Guiado (com Juninho)</h3>
+        <div class="script-meta">
+          <div class="script-meta-item"><span class="script-meta-label">Quando</span><span contenteditable="true">D-30</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Duração</span><span contenteditable="true">60s</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Formato</span><span contenteditable="true">9:16 + 1:1</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Apresentador</span><span contenteditable="true">Juninho</span></div>
+        </div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 1</span><span class="scene-time">0:00 – 0:08</span></div>
+        <p class="scene-direction" contenteditable="true">Juninho caminhando na entrada do cemitério, em camisa branca ou polo Univida (sem terno — proximidade, não autoridade). Fala direto à câmera.</p>
+        <div class="scene-narration" contenteditable="true">"Eu sou Juninho, e há 26 anos minha família cuida da sua família. Hoje, quero te mostrar nosso novo capítulo."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 2</span><span class="scene-time">0:08 – 0:20</span></div>
+        <p class="scene-direction" contenteditable="true">Juninho caminhando pela Linha Jardim. Câmera acompanha.</p>
+        <div class="scene-narration" contenteditable="true">"Aqui é a Linha Jardim. Espaços com gramado, paisagismo, para famílias que escolhem a serenidade da natureza."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 3</span><span class="scene-time">0:20 – 0:32</span></div>
+        <p class="scene-direction" contenteditable="true">Juninho na Linha Memorial.</p>
+        <div class="scene-narration" contenteditable="true">"A Linha Memorial é para quem quer um espaço com mármore, estrutura clássica, acabamento permanente."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 4</span><span class="scene-time">0:32 – 0:45</span></div>
+        <p class="scene-direction" contenteditable="true">Juninho na Linha Eterno, sentado no banco de pedra.</p>
+        <div class="scene-narration" contenteditable="true">"E a Linha Eterno é para famílias que querem um lugar próprio de encontro. Banco em pedra, área privativa, paisagismo exclusivo. Para visitar com filhos, netos, e ainda sentar."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 5</span><span class="scene-time">0:45 – 0:55</span></div>
+        <p class="scene-direction" contenteditable="true">Juninho na frente da capela velório.</p>
+        <div class="scene-narration" contenteditable="true">"Capela própria, integrada. Sua família não precisa ir para outro lugar no momento difícil. Tudo em um só espaço, com o cuidado Univida que você já conhece."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 6</span><span class="scene-time">0:55 – 1:00</span></div>
+        <p class="scene-direction" contenteditable="true">Juninho próximo ao logo. CTA: "Agende: (33) XXXX-XXXX"</p>
+        <div class="scene-narration" contenteditable="true">"Agende uma visita. É de graça, sem compromisso. Vou estar aqui te esperando."</div>
+      </div>
+
+      <button class="btn-add" onclick="addScene(this)">+ Adicionar cena</button>
+
+      <div class="block-info" style="margin-top:16px"><strong>Por que Juninho precisa estar nesse vídeo</strong><span contenteditable="true">Em cidade pequena, rosto vende mais que marca. Sua presença no Instagram (~6.792 seguidores, alcance orgânico forte) é o ativo mais valioso da campanha. Esse vídeo gera 3-5x mais conversão que um institucional.</span></div>
+    </div>
+
+    <!-- VÍDEO 5 -->
+    <div class="script removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="script-header">
+        <h3 class="script-title" contenteditable="true">Vídeo 5 · Depoimento de Cliente</h3>
+        <div class="script-meta">
+          <div class="script-meta-item"><span class="script-meta-label">Quando</span><span contenteditable="true">D-23</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Duração</span><span contenteditable="true">60s</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Formato</span><span contenteditable="true">9:16</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Variações</span><span contenteditable="true">3-5 clientes</span></div>
+        </div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 1</span><span class="scene-time">0:00 – 0:15</span></div>
+        <p class="scene-direction" contenteditable="true">Cliente real (idealmente cliente Plano Univida há 10+ anos), sentado em casa, falando à câmera. Improviso, não decorado.</p>
+        <div class="scene-narration" contenteditable="true">"Eu sou cliente do Plano Univida há 14 anos. Nunca tive problema. Quando soube do cemitério, fui um dos primeiros a comprar. Não quero deixar essa decisão para meus filhos."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 2</span><span class="scene-time">0:15 – 0:30</span></div>
+        <p class="scene-direction" contenteditable="true">B-roll do cliente caminhando no cemitério, em pé no espaço que comprou.</p>
+        <div class="scene-narration" contenteditable="true">"Eu escolhi a Linha Memorial. Quatro gavetas. Para mim, minha esposa, e o que mais a vida trouxer."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 3</span><span class="scene-time">0:30 – 0:45</span></div>
+        <p class="scene-direction" contenteditable="true">Cliente conversando com a esposa, sentados em banco do parque.</p>
+        <div class="scene-narration" contenteditable="true">"Minha esposa achou estranho no começo. Hoje agradece. A gente dorme tranquilo."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 4</span><span class="scene-time">0:45 – 0:55</span></div>
+        <p class="scene-direction" contenteditable="true">Cliente direto à câmera.</p>
+        <div class="scene-narration" contenteditable="true">"Se você é cliente do Plano, não pensa duas vezes. É a mesma família cuidando."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 5</span><span class="scene-time">0:55 – 1:00</span></div>
+        <p class="scene-direction" contenteditable="true">Logo + CTA: "Plano Fundador — restam X jazigos."</p>
+      </div>
+
+      <button class="btn-add" onclick="addScene(this)">+ Adicionar cena</button>
+    </div>
+
+    <!-- VÍDEO 6 -->
+    <div class="script removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="script-header">
+        <h3 class="script-title" contenteditable="true">Vídeo 6 · Plano Tranquilidade</h3>
+        <div class="script-meta">
+          <div class="script-meta-item"><span class="script-meta-label">Quando</span><span contenteditable="true">D-15</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Duração</span><span contenteditable="true">45s</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Formato</span><span contenteditable="true">9:16 + 1:1</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Objetivo</span><span contenteditable="true">Volume · baixo ticket</span></div>
+        </div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 1</span><span class="scene-time">0:00 – 0:10</span></div>
+        <p class="scene-direction" contenteditable="true">Casal de meia-idade tomando café da manhã em casa.</p>
+        <div class="scene-narration" contenteditable="true">"R$ 89 por mês. Você nem sente."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 2</span><span class="scene-time">0:10 – 0:20</span></div>
+        <p class="scene-direction" contenteditable="true">Animação simples: ícone família + ícone cemitério + ícone capela.</p>
+        <div class="scene-narration" contenteditable="true">"Família com até 4 dependentes. Velório completo, espaço no Cemitério Parque Univida, traslado. Tudo incluso. Sem surpresas."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 3</span><span class="scene-time">0:20 – 0:32</span></div>
+        <p class="scene-direction" contenteditable="true">Casal caminhando no parque do cemitério, conversando tranquilos.</p>
+        <div class="scene-narration" contenteditable="true">"Sua família já tem o cuidado Univida em vida. Agora pode ter também a tranquilidade para qualquer momento."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 4</span><span class="scene-time">0:32 – 0:45</span></div>
+        <p class="scene-direction" contenteditable="true">Logo + CTA: "Plano Tranquilidade — R$ 89/mês. Ligue agora: (33) XXXX-XXXX | WhatsApp"</p>
+        <div class="scene-narration" contenteditable="true">"Plano Tranquilidade. Univida cuida. Sempre."</div>
+      </div>
+
+      <button class="btn-add" onclick="addScene(this)">+ Adicionar cena</button>
+    </div>
+
+    <!-- VÍDEO 7 -->
+    <div class="script removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="script-header">
+        <h3 class="script-title" contenteditable="true">Vídeo 7 · Convite para Inauguração</h3>
+        <div class="script-meta">
+          <div class="script-meta-item"><span class="script-meta-label">Quando</span><span contenteditable="true">D-7 a D-Day</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Duração</span><span contenteditable="true">30s</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Formato</span><span contenteditable="true">9:16</span></div>
+          <div class="script-meta-item"><span class="script-meta-label">Apresentador</span><span contenteditable="true">Juninho</span></div>
+        </div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 1</span><span class="scene-time">0:00 – 0:08</span></div>
+        <p class="scene-direction" contenteditable="true">Drone do cemitério com bandeiras/decoração de inauguração.</p>
+        <div class="scene-narration" contenteditable="true">"Sábado, dia [X], às 9 da manhã, a gente inaugura o Cemitério Parque Univida."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 2</span><span class="scene-time">0:08 – 0:20</span></div>
+        <p class="scene-direction" contenteditable="true">Imagens da capela aberta, luz natural, café sendo servido, flores sendo colocadas.</p>
+        <div class="scene-narration" contenteditable="true">"Vai ter bênção ecumênica, tour guiado, café da manhã. Você e sua família estão convidados."</div>
+      </div>
+
+      <div class="scene removable">
+        <button class="btn-remove" onclick="removeItem(this)">×</button>
+        <div class="scene-header"><span class="scene-label">Cena 3</span><span class="scene-time">0:20 – 0:30</span></div>
+        <p class="scene-direction" contenteditable="true">Juninho na frente da capela. CTA: "[data], [hora] | [endereço] | Entrada gratuita"</p>
+        <div class="scene-narration" contenteditable="true">"Vou estar aqui esperando vocês. Endereço na bio. Te espero."</div>
+      </div>
+
+      <button class="btn-add" onclick="addScene(this)">+ Adicionar cena</button>
+    </div>
+
+    </div>
+    <button class="btn-add" onclick="addVideo(this)">+ Adicionar novo vídeo</button>
+
+    <!-- REELS CURTOS -->
+    <h3 class="subhead" contenteditable="true">Reels curtos · 15s · sustentação Instagram</h3>
+
+    <div data-list>
+
+    <div class="block removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <span class="eyebrow" contenteditable="true">Reel 1 · "3 motivos"</span>
+      <p contenteditable="true">Você, em cortes rápidos, falando à câmera:</p>
+      <ol class="list-clean">
+        <li contenteditable="true">"Único cemitério parque da região"</li>
+        <li contenteditable="true">"Capela própria, sem precisar sair"</li>
+        <li contenteditable="true">"A mesma família que cuida há 26 anos"</li>
+      </ol>
+      <p contenteditable="true"><em>Tela final: "Cadastre-se. Plano Fundador aberto."</em></p>
+    </div>
+
+    <div class="block removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <span class="eyebrow" contenteditable="true">Reel 2 · "Você sabia?"</span>
+      <p contenteditable="true">Texto sobreposto + B-roll do cemitério:</p>
+      <p contenteditable="true"><em>"Você sabia que... 73% das famílias entram em conflito por não terem espaço definido para os pais? Resolva agora. Plano Fundador aberto."</em></p>
+    </div>
+
+    <div class="block removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <span class="eyebrow" contenteditable="true">Reel 3 · "Antes vs depois"</span>
+      <p contenteditable="true">Split screen: lado esquerdo (foto cemitério público lotado, sem identificar); lado direito (drone do parque verde Univida).</p>
+      <p contenteditable="true"><em>Texto: "Sua família merece o melhor."</em></p>
+      <div class="block-warning"><strong>Cuidado</strong><span contenteditable="true">Usar sem identificar o municipal explicitamente — apenas evocar.</span></div>
+    </div>
+
+    <div class="block removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <span class="eyebrow" contenteditable="true">Reel 4 · "Pergunta difícil"</span>
+      <p contenteditable="true">Você falando: <em>"Posso te fazer uma pergunta difícil? Onde sua família vai te lembrar? Pensa nisso. A gente conversa."</em></p>
+      <p contenteditable="true"><em>Tela: "Cemitério Parque Univida. Cadastre-se."</em></p>
+    </div>
+
+    <div class="block removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <span class="eyebrow" contenteditable="true">Reel 5 · "Para quem é"</span>
+      <p contenteditable="true">Texto rolando:</p>
+      <p contenteditable="true"><em>"Para quem ama a família.<br>Para quem pensa nas próximas gerações.<br>Para quem quer dormir tranquilo.<br>Para quem entende que cuidar é o maior amor.<br>Cemitério Parque Univida. Cadastre-se."</em></p>
+    </div>
+
+    </div>
+    <button class="btn-add" onclick="duplicateLastChild(this)">+ Adicionar reel</button>
+
+  </div>
+</section>
+
+</div> <!-- /page -->
+
+<div class="page" style="padding-top:0;">
+
+<!-- ===== SEÇÃO 10: ARTES PARA REDES ===== -->
+<section class="section" id="sec-artes" data-section>
+  <div class="section-header">
+    <span class="section-number">X</span>
+    <h2 class="section-title" contenteditable="true">Artes para Redes Sociais</h2>
+    <div class="section-actions">
+      <button class="btn btn-icon" onclick="duplicateSection(this)">⎘</button>
+      <button class="btn btn-icon" onclick="removeSection(this)">×</button>
+    </div>
+  </div>
+  <div class="section-content">
+
+    <p class="lead" contenteditable="true">Cada peça com <em>conceito · copy · direção visual</em> — Kaleb pode produzir direto. A copy entre aspas é o texto literal a aparecer na arte. A "legenda" é o texto que vai abaixo do post.</p>
+
+    <div data-list>
+
+    <!-- ARTE 1 -->
+    <div class="art-card removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="art-header">
+        <h3 class="art-title" contenteditable="true">Arte 1 · Teaser fase 1</h3>
+        <span class="art-tag" contenteditable="true">D-53</span>
+      </div>
+      <p class="art-concept" contenteditable="true">Mistério. Fundo verde-musgo profundo. Texto branco em serifa elegante. Sem imagem.</p>
+      <div class="art-copy" contenteditable="true">Há 26 anos a Univida cuida da sua família.
+
+Em breve, um novo capítulo desse cuidado.</div>
+      <div class="art-legend" contenteditable="true">🌿 Algo novo está chegando.
+
+Há quase três décadas, o Grupo Univida acompanha as famílias da nossa região em cada momento — das primeiras consultas aos exercícios, dos remédios aos exames.
+
+Agora estamos prestes a completar nosso compromisso de cuidar de quem você ama, sempre.
+
+Cadastre-se para ser o primeiro a saber: link na bio.
+
+#GrupoUnivida #Guanhães #CuidarÉAmar</div>
+    </div>
+
+    <!-- ARTE 2 -->
+    <div class="art-card removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="art-header">
+        <h3 class="art-title" contenteditable="true">Arte 2 · Revelação total</h3>
+        <span class="art-tag" contenteditable="true">D-39</span>
+      </div>
+      <p class="art-concept" contenteditable="true">Foto drone do cemitério em luz dourada. Texto em duas linhas elegantes em sobreposição com gradiente sutil.</p>
+      <div class="art-copy" contenteditable="true">Cemitério Parque Univida
+
+Da primeira consulta ao último abraço.</div>
+      <div class="art-legend" contenteditable="true">O Cemitério Parque Univida está chegando — o primeiro cemitério parque do Vale do Aço.
+
+Espaços projetados para sua família se reunir, lembrar e respirar. Capela própria. Paisagismo exclusivo. A tradição Univida que você já conhece, agora completa.
+
+📍 Plano Fundador aberto: apenas 100 espaços com condição especial antes da inauguração.
+
+Pré-cadastro: cemiterioparqueunivida.com.br
+
+#CemitérioParqueUnivida #Univida</div>
+    </div>
+
+    <!-- ARTE 3 -->
+    <div class="art-card removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="art-header">
+        <h3 class="art-title" contenteditable="true">Arte 3 · Plano Fundador (urgência)</h3>
+        <span class="art-tag" contenteditable="true">D-30</span>
+      </div>
+      <p class="art-concept" contenteditable="true">Card vertical, fundo areia clara. Número grande "100" em destaque tipográfico, depois "espaços fundadores".</p>
+      <div class="art-copy" contenteditable="true">Apenas 100 espaços fundadores.
+
+Até a inauguração, você adquire seu espaço com 25% de desconto e seu nome eternizado entre os primeiros que confiaram no Cemitério Parque Univida.
+
+Restam: [contador atualizado semanalmente]
+
+📞 Agende seu tour: (33) XXXX-XXXX</div>
+    </div>
+
+    <!-- ARTE 4 -->
+    <div class="art-card removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="art-header">
+        <h3 class="art-title" contenteditable="true">Arte 4 · Carrossel "3 Linhas, 3 escolhas"</h3>
+        <span class="art-tag" contenteditable="true">D-25</span>
+      </div>
+      <p class="art-concept" contenteditable="true">Carrossel de 5 slides para Instagram. Capa convidativa, depois um slide por linha, fechando com CTA.</p>
+
+      <div class="art-copy" contenteditable="true"><strong>Slide 1 · Capa:</strong>
+"3 espaços. 3 formas de cuidar da sua família para sempre. Arraste →"
+
+<strong>Slide 2 · Linha Jardim:</strong>
+Linha Jardim
+Para famílias que escolhem a serenidade da natureza.
+2 gavetas | gramado paisagístico
+A partir de R$ 8.900
+
+<strong>Slide 3 · Linha Memorial:</strong>
+Linha Memorial
+Para quem quer estrutura clássica e acabamento permanente.
+2 gavetas | mármore
+A partir de R$ 15.900
+
+<strong>Slide 4 · Linha Eterno:</strong>
+Linha Eterno
+Para famílias que querem um lugar próprio de encontro.
+6 gavetas | banco em pedra | área privativa
+Sob consulta
+
+<strong>Slide 5 · CTA:</strong>
+"Qual fala mais com a sua família?
+Agende um tour gratuito. (33) XXXX-XXXX"</div>
+    </div>
+
+    <!-- ARTE 5 -->
+    <div class="art-card removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="art-header">
+        <h3 class="art-title" contenteditable="true">Arte 5 · Comparação institucional</h3>
+        <span class="art-tag" contenteditable="true">D-20</span>
+      </div>
+      <p class="art-concept" contenteditable="true">Lista de valores positivos. Sem mencionar concorrente — o leitor faz a comparação sozinho.</p>
+      <div class="art-copy" contenteditable="true">O que sua família merece?
+
+✓ Espaço com paisagismo
+✓ Capela própria integrada
+✓ Estacionamento amplo
+✓ Atendimento Univida 24h
+✓ Espaço perpétuo, sem renovação
+
+Cemitério Parque Univida.
+O primeiro do Vale do Aço.</div>
+      <div class="block-warning" style="margin-top:14px"><strong>Crítico</strong><span contenteditable="true">Nunca citar o cemitério municipal. Apenas listar valores positivos. Atacar diretamente seria deselegante e gera reação contrária.</span></div>
+    </div>
+
+    <!-- ARTE 6 -->
+    <div class="art-card removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="art-header">
+        <h3 class="art-title" contenteditable="true">Arte 6 · Plano Tranquilidade</h3>
+        <span class="art-tag" contenteditable="true">Recorrente</span>
+      </div>
+      <p class="art-concept" contenteditable="true">Card simples, cor verde suave, foco no preço. Tipografia em escala dramática para o "R$ 89".</p>
+      <div class="art-copy" contenteditable="true">R$ 89/mês.
+
+Velório completo + espaço no Cemitério Parque Univida + traslado.
+Família com até 4 dependentes.
+
+Tudo o que sua família precisa, num só plano.
+
+Plano Tranquilidade.
+Univida cuida. Sempre.
+
+📞 (33) XXXX-XXXX</div>
+    </div>
+
+    <!-- ARTE 7 -->
+    <div class="art-card removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="art-header">
+        <h3 class="art-title" contenteditable="true">Arte 7 · Stories interativos (sequência de 5)</h3>
+        <span class="art-tag" contenteditable="true">Semanal</span>
+      </div>
+      <div class="art-copy" contenteditable="true"><strong>Story 1 · Enquete:</strong>
+"Você já pensou em deixar tudo organizado para sua família?"
+[SIM, já pensei] | [NUNCA pensei nisso]
+
+<strong>Story 2 · Slider:</strong>
+"Quanto vale a tranquilidade da sua família?"
+Slider de 0 a 100.
+
+<strong>Story 3 · Revelação:</strong>
+"73% das famílias brasileiras nunca conversaram sobre isso. A gente entende. Por isso criamos o Cemitério Parque Univida — um lugar para conversar, planejar e respirar."
+
+<strong>Story 4 · Tour swipe up:</strong>
+"Quer conhecer? Arraste para cima."
+Link para landing.
+
+<strong>Story 5 · Depoimento:</strong>
+Vídeo curto de cliente: "Por que comprei meu espaço."</div>
+    </div>
+
+    <!-- ARTE 8 -->
+    <div class="art-card removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="art-header">
+        <h3 class="art-title" contenteditable="true">Arte 8 · Card cross-sell (WhatsApp para base Plano)</h3>
+        <span class="art-tag" contenteditable="true">D-30</span>
+      </div>
+      <p class="art-concept" contenteditable="true">Card horizontal personalizado para envio em massa via Cobrador IA. Personalização com [Nome] e [X anos].</p>
+      <div class="art-copy" contenteditable="true">Olá, [Nome]!
+
+Como cliente do Plano Univida há [X anos], você tem acesso exclusivo ao Plano Fundador do Cemitério Parque Univida.
+
+🎁 Sua condição especial:
+• 25% de desconto sobre o preço pós-inauguração
+• Entrada de R$ 990 + 36x sem juros
+• 1 ano de Plano Tranquilidade incluso
+
+📅 Agende seu tour gratuito: [link]
+
+Restam apenas [X] espaços fundadores.</div>
+    </div>
+
+    <!-- BANCO DE FRASES -->
+    <div class="art-card removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="art-header">
+        <h3 class="art-title" contenteditable="true">Banco de frases · Cards rápidos para sustentação</h3>
+        <span class="art-tag" contenteditable="true">Semanal</span>
+      </div>
+      <p class="art-concept" contenteditable="true">Para Kaleb produzir cards rápidos para sustentação semanal — fundo verde-musgo, tipografia serifa, frase única em destaque.</p>
+      <ol class="list-clean" data-list>
+        <li contenteditable="true" class="removable"><em>"O melhor presente que você pode deixar para sua família é uma decisão a menos."</em><button class="btn-remove" onclick="removeItem(this)">×</button></li>
+        <li contenteditable="true" class="removable"><em>"Pensar agora é o maior gesto de amor que existe."</em><button class="btn-remove" onclick="removeItem(this)">×</button></li>
+        <li contenteditable="true" class="removable"><em>"Aqui não termina nada. Aqui começa a memória."</em><button class="btn-remove" onclick="removeItem(this)">×</button></li>
+        <li contenteditable="true" class="removable"><em>"Sua família merece um lugar de paz, não de pressa."</em><button class="btn-remove" onclick="removeItem(this)">×</button></li>
+        <li contenteditable="true" class="removable"><em>"Onde a vida se transforma em lembrança."</em><button class="btn-remove" onclick="removeItem(this)">×</button></li>
+        <li contenteditable="true" class="removable"><em>"Cuidar da família é um compromisso de uma vida inteira. E além."</em><button class="btn-remove" onclick="removeItem(this)">×</button></li>
+        <li contenteditable="true" class="removable"><em>"O lugar onde sua família volta para se encontrar."</em><button class="btn-remove" onclick="removeItem(this)">×</button></li>
+      </ol>
+      <button class="btn-add" onclick="addItem(this)">+ Adicionar frase</button>
+    </div>
+
+    </div>
+    <button class="btn-add" onclick="duplicateLastChild(this)">+ Adicionar nova arte</button>
+
+  </div>
+</section>
+
+</div> <!-- /page -->
+
+<div class="page" style="padding-top:0;">
+
+<!-- ===== SEÇÃO 11: PANFLETOS E IMPRESSOS ===== -->
+<section class="section" id="sec-impressos" data-section>
+  <div class="section-header">
+    <span class="section-number">XI</span>
+    <h2 class="section-title" contenteditable="true">Panfletos e Impressos</h2>
+    <div class="section-actions">
+      <button class="btn btn-icon" onclick="duplicateSection(this)">⎘</button>
+      <button class="btn btn-icon" onclick="removeSection(this)">×</button>
+    </div>
+  </div>
+  <div class="section-content">
+
+    <p class="lead" contenteditable="true">Cinco peças impressas estruturadas — cada uma com material, tamanho, função e copy completa. Folders premium imprimem em papel couché 250g; o panfleto de massa pode ir em sulfite 90g para custo baixo.</p>
+
+    <div data-list>
+
+    <!-- FOLDER INSTITUCIONAL -->
+    <div class="art-card removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="art-header">
+        <h3 class="art-title" contenteditable="true">Folder 1 · Institucional Principal</h3>
+        <span class="art-tag" contenteditable="true">3 dobras · A4</span>
+      </div>
+      <p class="art-concept" contenteditable="true">Material: papel couché 250g, acabamento fosco. 3 dobras (A4 aberto). Distribuição: tour de venda, eventos, recepções de todas as unidades Univida.</p>
+
+      <h4 class="subhead" style="font-size:18px" contenteditable="true">Capa</h4>
+      <div class="art-copy" contenteditable="true">[Foto: drone do cemitério em luz dourada de fim de tarde]
+
+Cemitério Parque Univida
+
+"Da primeira consulta ao último abraço."</div>
+
+      <h4 class="subhead" style="font-size:18px" contenteditable="true">Aba interna esquerda · A história</h4>
+      <div class="art-copy" contenteditable="true">26 anos cuidando da sua família.
+
+Em 1999, nascia o Plano Univida com uma missão simples: cuidar das famílias da nossa região com seriedade e proximidade. Em quase três décadas, esse cuidado se expandiu — Hospital Dia, Unifit, Unifarma, Unilab, Funerária. Cada nova unidade foi resposta a uma necessidade real das famílias que confiam na gente.
+
+O Cemitério Parque Univida é o capítulo que faltava. Um espaço projetado com o mesmo cuidado que você já conhece, para acolher sua família em todos os momentos.</div>
+
+      <h4 class="subhead" style="font-size:18px" contenteditable="true">Aba central · As 3 Linhas</h4>
+      <div class="art-copy" contenteditable="true">Apresentação visual das três linhas com fotos, capacidade e ícones (Jardim · Memorial · Eterno).</div>
+
+      <h4 class="subhead" style="font-size:18px" contenteditable="true">Aba direita · Diferenciais</h4>
+      <div class="art-copy" contenteditable="true">✓ Único cemitério parque do Vale do Aço
+✓ Capela velório integrada (sua família não precisa se deslocar)
+✓ Paisagismo profissional com manutenção perpétua
+✓ Estacionamento amplo e acessível
+✓ A tradição Univida que você já conhece há 26 anos
+✓ Espaço perpétuo — sem renovação, sem surpresas</div>
+
+      <h4 class="subhead" style="font-size:18px" contenteditable="true">Verso · CTA</h4>
+      <div class="art-copy" contenteditable="true">Agende seu tour gratuito.
+
+📍 [Endereço completo]
+📞 (33) XXXX-XXXX
+💬 WhatsApp [número]
+🌐 cemiterioparqueunivida.com.br
+
+Univida. Cuidando da sua família. Sempre.</div>
+    </div>
+
+    <!-- FOLDER LINHA ETERNO -->
+    <div class="art-card removable" style="border:2px solid var(--gold-pale);">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="art-header">
+        <h3 class="art-title" contenteditable="true">Folder 2 · Linha Eterno (Premium)</h3>
+        <span class="art-tag" style="background:var(--gold)" contenteditable="true">A5 · 8 páginas</span>
+      </div>
+      <p class="art-concept" contenteditable="true">Material: papel couché 250g, acabamento fosco com verniz localizado no logo. A5 dobrado, 8 páginas. <strong>Não é panfleto comum — é peça de luxo.</strong> Distribuição apenas para clientes qualificados em consulta privada.</p>
+
+      <h4 class="subhead" style="font-size:18px" contenteditable="true">Capa</h4>
+      <div class="art-copy" contenteditable="true">[Foto: banco de pedra em luz natural, jazigo da Linha Eterno ao fundo]
+
+Linha Eterno (em hot stamping dourado)
+
+"Um lugar de família para sempre."</div>
+
+      <h4 class="subhead" style="font-size:18px" contenteditable="true">Página 1 · Texto curto, elegante</h4>
+      <div class="art-copy" contenteditable="true">"Existem decisões que não se tomam pelo preço. Tomam-se pelo significado.
+
+A Linha Eterno foi criada para famílias que entendem que o lugar de descanso de quem amaram não é apenas um espaço — é um ponto de encontro entre gerações.
+
+Um banco em pedra. Uma área privativa. Um paisagismo desenhado com atenção. Um endereço de família, no sentido mais íntimo da palavra."</div>
+
+      <h4 class="subhead" style="font-size:18px" contenteditable="true">Páginas 2-3 · Especificações</h4>
+      <div class="art-copy" contenteditable="true">• 6 gavetas amplas
+• Área privativa de [X] m²
+• Banco em pedra natural (escolha do material)
+• Paisagismo personalizado (3 opções de projeto)
+• Gravação em pedra com fonte clássica
+• Acesso preferencial à capela
+• Atendimento por gerente sênior dedicado</div>
+
+      <h4 class="subhead" style="font-size:18px" contenteditable="true">Páginas 4-5 · Galeria visual</h4>
+      <p contenteditable="true">4-6 fotos profissionais (paisagismo, banco, vista aérea, capela em luz natural).</p>
+
+      <h4 class="subhead" style="font-size:18px" contenteditable="true">Página 6 · Personalização</h4>
+      <div class="art-copy" contenteditable="true">"Cada Linha Eterno é única. Ao adquirir, você participa do projeto: escolha das pedras, paisagismo, posição da gravação, mobiliário."</div>
+
+      <h4 class="subhead" style="font-size:18px" contenteditable="true">Contracapa · Convite</h4>
+      <div class="art-copy" contenteditable="true">"Apresentamos a Linha Eterno apenas com hora marcada.
+Reserve sua visita privada com nosso gerente sênior.
+
+📞 [número direto do gerente]
+💼 [email do gerente]"</div>
+    </div>
+
+    <!-- FOLDER PLANO TRANQUILIDADE -->
+    <div class="art-card removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="art-header">
+        <h3 class="art-title" contenteditable="true">Folder 3 · Plano Tranquilidade</h3>
+        <span class="art-tag" contenteditable="true">1/3 A4 · sulfite 90g</span>
+      </div>
+      <p class="art-concept" contenteditable="true">Material: papel sulfite 90g, tamanho 1/3 A4 (panfleto de mão). Distribuição em massa: farmácias, recepções, Unifit, Hospital Dia, porta-a-porta em bairros estratégicos.</p>
+
+      <h4 class="subhead" style="font-size:18px" contenteditable="true">Frente</h4>
+      <div class="art-copy" contenteditable="true">Plano Tranquilidade Univida
+
+A partir de R$ 89/mês
+
+Velório completo • Espaço no Cemitério Parque • Traslado
+Família com até 4 dependentes
+
+📞 (33) XXXX-XXXX</div>
+
+      <h4 class="subhead" style="font-size:18px" contenteditable="true">Verso</h4>
+      <div class="art-copy" contenteditable="true">O que está incluso:
+✓ Velório completo na Capela Univida
+✓ Urna, paramentação, ornamentação floral
+✓ Traslado em qualquer cidade do Brasil
+✓ Espaço no Cemitério Parque Univida (em comodato)
+✓ Apoio 24h da equipe Univida
+
+Quem pode contratar:
+Qualquer pessoa, com ou sem Plano Univida.
+Clientes Plano Univida têm 15% de desconto.
+
+Como contratar:
+📞 Ligue: (33) XXXX-XXXX
+💬 WhatsApp: [número]
+📍 Visite: [endereço Funerária]</div>
+    </div>
+
+    <!-- CONVITE -->
+    <div class="art-card removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="art-header">
+        <h3 class="art-title" contenteditable="true">Convite de Inauguração</h3>
+        <span class="art-tag" contenteditable="true">15×21cm · vergê marfim 250g</span>
+      </div>
+      <p class="art-concept" contenteditable="true">Material: papel vergê marfim 250g, envelope individual, 15×21cm. Logo em hot stamping verde-musgo na capa.</p>
+
+      <div class="art-copy" contenteditable="true">Convite
+
+Tenho a alegria de convidar você e sua família para a inauguração do Cemitério Parque Univida — um novo capítulo do nosso compromisso de cuidar das famílias da nossa região há mais de 26 anos.
+
+Será um momento de bênção, tour pelos espaços e café da manhã em nossa capela.
+
+📅 Sábado, [data]
+🕘 9h00
+📍 [endereço completo]
+
+Sua presença significa muito para nós.
+
+Gilberto Campos de Miranda Júnior
+CEO Grupo Univida</div>
+
+      <div class="block-info" style="margin-top:14px"><strong>Distribuição</strong><span contenteditable="true">Clientes Plano há 10+ anos · autoridades locais (prefeito, vereadores, juiz, promotor) · líderes religiosos (padre, pastor presbiteriano, pastor batista, espírita) · médicos parceiros · jornalistas locais · primeiros 100 compradores Plano Fundador.</span></div>
+    </div>
+
+    <!-- OUTDOOR -->
+    <div class="art-card removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <div class="art-header">
+        <h3 class="art-title" contenteditable="true">Outdoor · 2 versões</h3>
+        <span class="art-tag" contenteditable="true">2 pontos · 60 dias</span>
+      </div>
+
+      <h4 class="subhead" style="font-size:18px" contenteditable="true">Versão 1 · Fase teaser (D-50 a D-30)</h4>
+      <p class="art-concept" contenteditable="true">Fundo verde-musgo, texto branco simples. Logo Univida pequeno no canto.</p>
+      <div class="art-copy" contenteditable="true">"Em breve, o que faltava no nosso cuidado."</div>
+
+      <h4 class="subhead" style="font-size:18px" contenteditable="true">Versão 2 · Fase pré-venda (D-29 a D-Day)</h4>
+      <p class="art-concept" contenteditable="true">Foto drone do cemitério. Texto sobre gradiente sutil.</p>
+      <div class="art-copy" contenteditable="true">"Cemitério Parque Univida. Cadastre-se."
+
+[site] | [telefone]</div>
+
+      <div class="block-info" style="margin-top:14px"><strong>Pontos sugeridos para Guanhães</strong>
+        <ul class="list-clean" style="margin-top:8px" data-list>
+          <li contenteditable="true" class="removable">Av. Olegário Maciel ou Av. Castelo Branco (entrada da cidade, visibilidade alta)<button class="btn-remove" onclick="removeItem(this)">×</button></li>
+          <li contenteditable="true" class="removable">Próximo ao Hospital Dia / Plano Univida (reforço para clientes existentes)<button class="btn-remove" onclick="removeItem(this)">×</button></li>
+        </ul>
+      </div>
+    </div>
+
+    </div>
+    <button class="btn-add" onclick="duplicateLastChild(this)">+ Adicionar peça impressa</button>
+
+  </div>
+</section>
+
+<!-- ===== SEÇÃO 12: SCRIPTS · RÁDIO · WHATSAPP ===== -->
+<section class="section" id="sec-scripts" data-section>
+  <div class="section-header">
+    <span class="section-number">XII</span>
+    <h2 class="section-title" contenteditable="true">Rádio, Scripts Comerciais e WhatsApp</h2>
+    <div class="section-actions">
+      <button class="btn btn-icon" onclick="duplicateSection(this)">⎘</button>
+      <button class="btn btn-icon" onclick="removeSection(this)">×</button>
+    </div>
+  </div>
+  <div class="section-content">
+
+    <h3 class="subhead" contenteditable="true">Rádio · 30 segundos · 3 emissoras locais</h3>
+
+    <div data-list>
+    <div class="block removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <span class="eyebrow" contenteditable="true">Versão 1 · Awareness · Fase 1-2</span>
+      <div class="art-copy" contenteditable="true">[Trilha suave · piano + cordas]
+
+LOCUTORA: "Há 26 anos, o Grupo Univida cuida das famílias da nossa região. Em cada consulta, em cada exame, em cada dia. Agora, completamos nosso cuidado com um novo espaço, desenhado com o mesmo carinho: o Cemitério Parque Univida. Da primeira consulta ao último abraço. Cadastre-se: cemiterioparqueunivida.com.br ou ligue [número]. Univida. Cuidando da sua família. Sempre."</div>
+    </div>
+
+    <div class="block removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <span class="eyebrow" contenteditable="true">Versão 2 · Plano Fundador · Urgência</span>
+      <div class="art-copy" contenteditable="true">LOCUTORA: "Apenas 100 espaços fundadores no Cemitério Parque Univida, o primeiro cemitério parque do Vale do Aço. Adquira agora com 25% de desconto e condições especiais de pré-inauguração. Entrada R$ 990 e parcelamento em 36 vezes sem juros. Restam poucos espaços. Ligue: [número]. Cemitério Parque Univida. Univida cuida. Sempre."</div>
+    </div>
+    </div>
+    <button class="btn-add" onclick="duplicateLastChild(this)">+ Adicionar versão de rádio</button>
+
+    <h3 class="subhead" contenteditable="true">Script de ligação consultiva · Equipe Plano Univida</h3>
+
+    <div class="block">
+      <span class="eyebrow" contenteditable="true">Para uso de Débora, Sarah, Paulo e Eudes</span>
+
+      <h4 contenteditable="true" style="font-family:var(--display); margin:16px 0 8px"><em>Abertura</em></h4>
+      <div class="art-copy" contenteditable="true">"Olá [Nome], aqui é [Atendente] do Plano Univida. Tudo bem com você? Como está a família?"</div>
+
+      <h4 contenteditable="true" style="font-family:var(--display); margin:16px 0 8px"><em>Conexão</em></h4>
+      <div class="art-copy" contenteditable="true">"Você é cliente nosso há [X anos], e queria te dar uma informação em primeira mão, antes de qualquer outra pessoa da cidade ficar sabendo."</div>
+
+      <h4 contenteditable="true" style="font-family:var(--display); margin:16px 0 8px"><em>Revelação</em></h4>
+      <div class="art-copy" contenteditable="true">"O Grupo Univida vai inaugurar em [data] o primeiro cemitério parque do Vale do Aço — um espaço diferente de tudo que existe na região, com paisagismo, capela integrada e a mesma qualidade de atendimento que você já conhece da gente."</div>
+
+      <h4 contenteditable="true" style="font-family:var(--display); margin:16px 0 8px"><em>Oferta</em></h4>
+      <div class="art-copy" contenteditable="true">"E como cliente fiel do Plano, você tem acesso ao Plano Fundador, que dá 25% de desconto e condições muito especiais. Posso te explicar em 5 minutos por telefone ou prefere agendar uma visita gratuita pra conhecer pessoalmente?"</div>
+
+      <h4 contenteditable="true" style="font-family:var(--display); margin:24px 0 8px"><em>Tratamento de objeções</em></h4>
+
+      <div class="block-warning"><strong>Se: "Não quero pensar nisso agora"</strong><span contenteditable="true">"Eu entendo perfeitamente, [Nome]. Por isso quem decide agora dorme tranquilo. Não é sobre pensar na morte — é sobre poupar sua família de uma decisão difícil quando ela já estiver passando por outras coisas. Posso te mostrar? Sem compromisso, sem pressão."</span></div>
+
+      <div class="block-warning"><strong>Se: "Está caro"</strong><span contenteditable="true">"Entendi. Temos planos a partir de R$ 8.900 com entrada de R$ 990 e 36 vezes sem juros — dá menos de R$ 250 por mês. E temos também o Plano Tranquilidade mensal por R$ 89. Posso te explicar qual faz mais sentido pra você?"</span></div>
+
+      <div class="block-warning"><strong>Se: "Vou pensar"</strong><span contenteditable="true">"Claro, é uma decisão importante. Posso te enviar um material pelo WhatsApp pra você ver com calma? E te ligo daqui a [3 dias] sem compromisso, só pra ver se você ficou com alguma dúvida."</span></div>
+
+      <h4 contenteditable="true" style="font-family:var(--display); margin:24px 0 8px"><em>Fechamento</em></h4>
+      <div class="art-copy" contenteditable="true">"Vou te enviar agora pelo WhatsApp o material e o link pra agendar a visita. Se preferir, marco eu mesmo — qual dia da próxima semana é melhor pra você?"</div>
+    </div>
+
+    <h3 class="subhead" contenteditable="true">Disparos de WhatsApp · Cobrador IA</h3>
+
+    <div data-list>
+    <div class="block removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <span class="eyebrow" contenteditable="true">Disparo 1 · Teaser · D-46</span>
+      <div class="art-copy" contenteditable="true">👋 Oi, [Nome]! Aqui é o time do Grupo Univida.
+
+Algo novo está chegando na nossa cidade — e como cliente fiel da Univida, você vai ser um dos primeiros a saber.
+
+Fica de olho aqui no WhatsApp. 🌿</div>
+    </div>
+
+    <div class="block removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <span class="eyebrow" contenteditable="true">Disparo 2 · Revelação · D-39</span>
+      <div class="art-copy" contenteditable="true">[Nome], chegou a hora.
+
+Estamos prestes a inaugurar o Cemitério Parque Univida — o primeiro cemitério parque do Vale do Aço.
+
+🎁 Como cliente Plano Univida, você tem acesso exclusivo ao Plano Fundador, com até 25% de desconto.
+
+Quer saber mais?
+[Botão: SIM, ME CONTE] [Botão: AGENDAR TOUR]</div>
+    </div>
+
+    <div class="block removable">
+      <button class="btn-remove" onclick="removeItem(this)">×</button>
+      <span class="eyebrow" contenteditable="true">Disparo 3 · Urgência · D-15</span>
+      <div class="art-copy" contenteditable="true">[Nome], últimos espaços fundadores!
+
+Restam apenas [X] de 100 espaços com a condição especial de pré-inauguração.
+
+Após a abertura no dia [data], os preços sobem 25%.
+
+📞 Posso te ligar para explicar?
+[SIM] [NÃO, MAIS TARDE]</div>
+    </div>
+    </div>
+    <button class="btn-add" onclick="duplicateLastChild(this)">+ Adicionar disparo</button>
+
+  </div>
+</section>
+
+<!-- ===== SEÇÃO 13: PRÓXIMOS PASSOS ===== -->
+<section class="section" id="sec-proximos" data-section>
+  <div class="section-header">
+    <span class="section-number">XIII</span>
+    <h2 class="section-title" contenteditable="true">Próximos Passos · Esta Semana</h2>
+    <div class="section-actions">
+      <button class="btn btn-icon" onclick="duplicateSection(this)">⎘</button>
+      <button class="btn btn-icon" onclick="removeSection(this)">×</button>
+    </div>
+  </div>
+  <div class="section-content">
+
+    <p class="lead" contenteditable="true">D-60 a D-54 · em ordem de prioridade. Cada item tem dono e prazo. Sem dono ou sem prazo, não roda.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th style="width:5%">#</th><th>Ação</th><th>Dono</th><th>Prazo</th><th>Status</th></tr>
+        </thead>
+        <tbody data-list>
+          <tr class="removable">
+            <td contenteditable="true">1</td>
+            <td contenteditable="true">Fechar identidade visual — brief para Kaleb. Entrega de 3 propostas em 7 dias</td>
+            <td contenteditable="true">Juninho → Kaleb</td>
+            <td contenteditable="true">D-54</td>
+            <td contenteditable="true">⬜<button class="btn-remove" onclick="removeItem(this)">×</button></td>
+          </tr>
+          <tr class="removable">
+            <td contenteditable="true">2</td>
+            <td contenteditable="true">Abrir 2 vagas comerciais (gerente + consultor sênior)</td>
+            <td contenteditable="true">RH</td>
+            <td contenteditable="true">D-57</td>
+            <td contenteditable="true">⬜<button class="btn-remove" onclick="removeItem(this)">×</button></td>
+          </tr>
+          <tr class="removable">
+            <td contenteditable="true">3</td>
+            <td contenteditable="true">Criar landing page de captação (cemiterioparqueunivida.com.br ou subdomínio)</td>
+            <td contenteditable="true">Kaleb / Dev</td>
+            <td contenteditable="true">D-52</td>
+            <td contenteditable="true">⬜<button class="btn-remove" onclick="removeItem(this)">×</button></td>
+          </tr>
+          <tr class="removable">
+            <td contenteditable="true">4</td>
+            <td contenteditable="true">Reunião com equipe Plano (Débora, Sarah, Paulo, Eudes) — alinhar cross-sell</td>
+            <td contenteditable="true">Juninho</td>
+            <td contenteditable="true">D-55</td>
+            <td contenteditable="true">⬜<button class="btn-remove" onclick="removeItem(this)">×</button></td>
+          </tr>
+          <tr class="removable">
+            <td contenteditable="true">5</td>
+            <td contenteditable="true">Reunião com Josy (Funerária) — integração com plano funerário existente</td>
+            <td contenteditable="true">Juninho → Josy</td>
+            <td contenteditable="true">D-55</td>
+            <td contenteditable="true">⬜<button class="btn-remove" onclick="removeItem(this)">×</button></td>
+          </tr>
+          <tr class="removable">
+            <td contenteditable="true">6</td>
+            <td contenteditable="true">Bater o martelo nos preços finais (Bronze/Jardim, Prata/Memorial, Ouro/Eterno)</td>
+            <td contenteditable="true">Juninho</td>
+            <td contenteditable="true">D-56</td>
+            <td contenteditable="true">⬜<button class="btn-remove" onclick="removeItem(this)">×</button></td>
+          </tr>
+          <tr class="removable">
+            <td contenteditable="true">7</td>
+            <td contenteditable="true">Revisar cobertura legal — contrato de compra perpétua, regulamento, normas estaduais</td>
+            <td contenteditable="true">Jurídico</td>
+            <td contenteditable="true">D-50</td>
+            <td contenteditable="true">⬜<button class="btn-remove" onclick="removeItem(this)">×</button></td>
+          </tr>
+          <tr class="removable">
+            <td contenteditable="true">8</td>
+            <td contenteditable="true">Briefar fotógrafo/videomaker — datas de gravação dos vídeos 1, 2 e 3</td>
+            <td contenteditable="true">Kaleb</td>
+            <td contenteditable="true">D-50</td>
+            <td contenteditable="true">⬜<button class="btn-remove" onclick="removeItem(this)">×</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="btn-add" onclick="addTableRow(this)">+ Adicionar ação</button>
+
+    <div class="block-info" style="margin-top:32px"><strong>Lembrete crítico</strong><span contenteditable="true">A campanha começa em D-53. Se a identidade visual e a landing page não estiverem prontas em D-54, todo o cronograma desliza. Esses dois itens são gargalo.</span></div>
+
+  </div>
+</section>
+
+<!-- ÁREA DE EXPANSÃO -->
+<button class="btn-add-section" onclick="addSection(this)">+ Adicionar nova seção ao documento</button>
+
+<footer class="footer">
+  <div class="footer-mark">Univida · cuidando da sua família. Sempre.</div>
+  <div>Documento estratégico interno · Confidencial · <span id="docDate"></span></div>
+</footer>
+
+</div> <!-- /page -->
+
+<script>
+// ====== ESTADO DO DOCUMENTO ======
+const STORAGE_KEY = 'campanha_univida_v1';
+let saveTimer = null;
+
+// ====== AUTOSAVE ======
+function debouncedSave() {
+  document.getElementById('saveStatus').textContent = 'Salvando…';
+  document.getElementById('saveStatus').className = 'save-status saving';
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => {
+    saveDocument(true);
+  }, 600);
+}
+
+function saveDocument(silent) {
+  try {
+    const html = document.getElementById('documentRoot').innerHTML;
+    localStorage.setItem(STORAGE_KEY, html);
+    localStorage.setItem(STORAGE_KEY + '_timestamp', new Date().toISOString());
+    const status = document.getElementById('saveStatus');
+    status.textContent = '✓ Salvo';
+    status.className = 'save-status saved';
+    if (!silent) {
+      flashStatus('✓ Documento salvo localmente');
+    }
+  } catch(e) {
+    document.getElementById('saveStatus').textContent = '⚠ Erro ao salvar';
+    console.error(e);
+  }
+}
+
+function loadDocument() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      document.getElementById('documentRoot').innerHTML = saved;
+      const ts = localStorage.getItem(STORAGE_KEY + '_timestamp');
+      if (ts) {
+        const date = new Date(ts);
+        const status = document.getElementById('saveStatus');
+        if (status) {
+          status.textContent = '✓ Carregado · ' + date.toLocaleString('pt-BR');
+          status.className = 'save-status saved';
+        }
+      }
+      // Reattach event listeners
+      attachListeners();
+      return true;
+    }
+  } catch(e) {
+    console.error('Erro ao carregar:', e);
+  }
+  return false;
+}
+
+function resetDocument() {
+  if (confirm('Tem certeza que deseja restaurar o documento original? Todas as edições serão perdidas.')) {
+    localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(STORAGE_KEY + '_timestamp');
+    location.reload();
+  }
+}
+
+function flashStatus(message) {
+  const status = document.getElementById('saveStatus');
+  const original = status.textContent;
+  status.textContent = message;
+  setTimeout(() => { status.textContent = original; }, 2000);
+}
+
+// ====== EXPORTAR HTML ======
+function exportHTML() {
+  // Clone o documento atual
+  const docClone = document.documentElement.cloneNode(true);
+  // Remove botões de edição do clone
+  docClone.querySelectorAll('.btn-add, .btn-add-section, .btn-remove, .section-actions').forEach(el => el.remove());
+  // Remove a toolbar
+  const toolbar = docClone.querySelector('.toolbar');
+  if (toolbar) toolbar.remove();
+  const toc = docClone.querySelector('.toc');
+  if (toc) toc.remove();
+  // Remove contenteditable
+  docClone.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+  // Remove scripts (deixar apenas o conteúdo estático)
+  docClone.querySelectorAll('script').forEach(el => el.remove());
+  // Ajusta padding superior já que removemos a toolbar
+  const pages = docClone.querySelectorAll('.page');
+  if (pages.length > 0) pages[0].style.paddingTop = '60px';
+
+  const html = '<!DOCTYPE html>\n<html lang="pt-BR">\n' + docClone.innerHTML + '\n</html>';
+  const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const date = new Date().toISOString().split('T')[0];
+  a.href = url;
+  a.download = 'campanha_cemiterio_parque_univida_' + date + '.html';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  flashStatus('✓ HTML exportado');
+}
+
+// ====== ADICIONAR / REMOVER ITEMS ======
+function removeItem(btn) {
+  const item = btn.closest('.removable');
+  if (item && confirm('Remover este item?')) {
+    item.remove();
+    debouncedSave();
+  }
+}
+
+function removeSection(btn) {
+  const section = btn.closest('[data-section]');
+  if (section && confirm('Remover esta seção inteira?')) {
+    section.remove();
+    rebuildTOC();
+    debouncedSave();
+  }
+}
+
+function duplicateSection(btn) {
+  const section = btn.closest('[data-section]');
+  if (section) {
+    const clone = section.cloneNode(true);
+    clone.removeAttribute('id');
+    section.parentNode.insertBefore(clone, section.nextSibling);
+    attachListeners();
+    rebuildTOC();
+    debouncedSave();
+  }
+}
+
+function addItem(btn) {
+  const list = btn.previousElementSibling;
+  if (list && list.matches('[data-list], ul, ol')) {
+    const lastItem = list.querySelector('li.removable:last-child') || list.querySelector('li:last-child');
+    if (lastItem) {
+      const clone = lastItem.cloneNode(true);
+      // Limpar conteúdo, manter estrutura
+      const editable = clone.querySelector('[contenteditable]');
+      if (editable) {
+        editable.textContent = 'Novo item — clique para editar';
+      } else if (clone.hasAttribute('contenteditable')) {
+        // Para li que é diretamente contenteditable
+        const removeBtn = clone.querySelector('.btn-remove');
+        clone.textContent = 'Novo item — clique para editar';
+        if (removeBtn) clone.appendChild(removeBtn);
+      }
+      // Garantir que tenha botão de remover
+      if (!clone.querySelector('.btn-remove')) {
+        const removeBtn = document.createElement('button');
+        removeBtn.className = 'btn-remove';
+        removeBtn.textContent = '×';
+        removeBtn.onclick = () => removeItem(removeBtn);
+        clone.appendChild(removeBtn);
+      }
+      clone.classList.add('removable');
+      list.appendChild(clone);
+      attachListeners();
+      debouncedSave();
+    }
+  }
+}
+
+function addTableRow(btn) {
+  const tableWrap = btn.previousElementSibling;
+  const table = tableWrap.querySelector ? tableWrap.querySelector('tbody[data-list]') : null;
+  if (table) {
+    const lastRow = table.querySelector('tr.removable:last-child');
+    if (lastRow) {
+      const clone = lastRow.cloneNode(true);
+      // Limpar células
+      clone.querySelectorAll('td').forEach((td, i) => {
+        const removeBtn = td.querySelector('.btn-remove');
+        td.textContent = i === 0 ? 'Novo' : '—';
+        if (removeBtn) td.appendChild(removeBtn);
+      });
+      table.appendChild(clone);
+      attachListeners();
+      debouncedSave();
+    }
+  }
+}
+
+function duplicateLastChild(btn) {
+  const container = btn.previousElementSibling;
+  if (container && container.matches('[data-list]')) {
+    const lastChild = Array.from(container.children).filter(c => c.classList.contains('removable')).pop();
+    if (lastChild) {
+      const clone = lastChild.cloneNode(true);
+      container.appendChild(clone);
+      attachListeners();
+      debouncedSave();
+    }
+  }
+}
+
+function addScene(btn) {
+  const script = btn.closest('.script');
+  if (script) {
+    const lastScene = script.querySelector('.scene.removable:last-of-type') || script.querySelector('.scene:last-of-type');
+    if (lastScene) {
+      const clone = lastScene.cloneNode(true);
+      const label = clone.querySelector('.scene-label');
+      const time = clone.querySelector('.scene-time');
+      const dir = clone.querySelector('.scene-direction');
+      const narr = clone.querySelector('.scene-narration');
+      if (label) label.textContent = 'Nova cena';
+      if (time) time.textContent = '0:00 – 0:00';
+      if (dir) dir.textContent = 'Descrição da cena…';
+      if (narr) narr.textContent = 'Texto da locução ou diálogo…';
+      lastScene.parentNode.insertBefore(clone, btn);
+      attachListeners();
+      debouncedSave();
+    }
+  }
+}
+
+function addVideo(btn) {
+  const container = btn.previousElementSibling;
+  if (container && container.matches('[data-list]')) {
+    const lastVideo = container.querySelector('.script.removable:last-of-type');
+    if (lastVideo) {
+      const clone = lastVideo.cloneNode(true);
+      const title = clone.querySelector('.script-title');
+      if (title) title.textContent = 'Novo vídeo · clique para editar';
+      container.appendChild(clone);
+      attachListeners();
+      debouncedSave();
+    }
+  }
+}
+
+function addSection(btn) {
+  const sectionsContainer = btn.parentNode;
+  const lastSection = sectionsContainer.querySelector('section.section[data-section]:last-of-type') ||
+                      document.querySelector('section.section[data-section]:last-of-type');
+  if (lastSection) {
+    const clone = lastSection.cloneNode(true);
+    clone.removeAttribute('id');
+    const numberEl = clone.querySelector('.section-number');
+    const titleEl = clone.querySelector('.section-title');
+    const contentEl = clone.querySelector('.section-content');
+    if (numberEl) numberEl.textContent = '+';
+    if (titleEl) titleEl.textContent = 'Nova seção · clique para editar';
+    if (contentEl) {
+      contentEl.innerHTML = '<p class="lead" contenteditable="true">Conteúdo da nova seção…</p>';
+    }
+    btn.parentNode.insertBefore(clone, btn);
+    attachListeners();
+    rebuildTOC();
+    debouncedSave();
+  }
+}
+
+// ====== EVENT LISTENERS ======
+function attachListeners() {
+  // Salvamento automático ao editar
+  document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+    el.removeEventListener('input', debouncedSave);
+    el.addEventListener('input', debouncedSave);
+    // Não permitir paste de HTML formatado
+    el.removeEventListener('paste', handlePaste);
+    el.addEventListener('paste', handlePaste);
+  });
+}
+
+function handlePaste(e) {
+  e.preventDefault();
+  const text = (e.clipboardData || window.clipboardData).getData('text/plain');
+  document.execCommand('insertText', false, text);
+}
+
+// ====== TOC DINÂMICO ======
+function rebuildTOC() {
+  const tocList = document.getElementById('tocList');
+  if (!tocList) return;
+  tocList.innerHTML = '';
+  document.querySelectorAll('section.section[data-section]').forEach(section => {
+    const titleEl = section.querySelector('.section-title');
+    const numberEl = section.querySelector('.section-number');
+    if (titleEl) {
+      const li = document.createElement('li');
+      li.className = 'toc-item';
+      const a = document.createElement('a');
+      // Garantir que a seção tenha id
+      if (!section.id) section.id = 'sec-' + Math.random().toString(36).substr(2, 9);
+      a.href = '#' + section.id;
+      a.textContent = (numberEl ? numberEl.textContent + '. ' : '') + titleEl.textContent;
+      li.appendChild(a);
+      tocList.appendChild(li);
+    }
+  });
+}
+
+// ====== TOC SCROLLSPY ======
+function setupScrollSpy() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('.toc-item a').forEach(a => a.classList.remove('active'));
+        const link = document.querySelector('.toc-item a[href="#' + entry.target.id + '"]');
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-100px 0px -60% 0px' });
+
+  document.querySelectorAll('section.section[data-section]').forEach(section => {
+    if (section.id) observer.observe(section);
+  });
+}
+
+// ====== INIT ======
+document.addEventListener('DOMContentLoaded', () => {
+  // Tentar carregar documento salvo
+  loadDocument();
+
+  // Data de hoje no rodapé
+  const dateEl = document.getElementById('docDate');
+  if (dateEl) dateEl.textContent = new Date().toLocaleDateString('pt-BR', { year: 'numeric', month: 'long', day: 'numeric' });
+
+  // Eventos
+  attachListeners();
+  rebuildTOC();
+  setupScrollSpy();
+
+  // Salvamento ao sair (Ctrl+S)
+  document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+      e.preventDefault();
+      saveDocument();
+    }
+  });
+});
+</script>
+</body>
+</html>
